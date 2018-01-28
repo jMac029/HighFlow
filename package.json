@@ -1,0 +1,27 @@
+{
+  "name": "highflow",
+  "version": "0.0.1",
+  "description": "a platform for connected interested parties of people",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jMac029/HighFlow.git"
+  },
+  "author": "HighFlow Dev Group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jMac029/HighFlow/issues"
+  },
+  "homepage": "https://github.com/jMac029/HighFlow#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.32.2"
+  }
+}
