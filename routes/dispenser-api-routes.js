@@ -26,7 +26,7 @@ module.exports = function(app) {
         });
     });
 
-    app.Product("/api/dispensers", function(req, res) {
+    app.post("/api/dispensers", function(req, res) {
         db.Dispenser.create(req.body).then(function(dbDispenser) {
             res.json(dbDispenser);
         });

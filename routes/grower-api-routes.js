@@ -26,7 +26,7 @@ module.exports = function(app) {
         });
     });
 
-    app.Product("/api/growers", function(req, res) {
+    app.post("/api/growers", function(req, res) {
         db.Grower.create(req.body).then(function(dbGrower) {
             res.json(dbGrower);
         });

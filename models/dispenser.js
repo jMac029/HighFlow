@@ -30,14 +30,14 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         bio: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 len: [1, 280]
             }
         },
         strains_wanted: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 len: [1, 280]
@@ -45,13 +45,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    // Dispenser.associate = function(models) {
-    //     // Associating Dispenser with Products
-    //     // When an Dispenser is deleted, also delete any associated Products
-    //     Dispenser.hasMany(models.Product, {
-    //         onDelete: "cascade"
-    //     });
-    // };
+    Dispenser.associate = function(models) {
+        // Associating Dispenser with Products
+        // When an Dispenser is deleted, also delete any associated Products
+        Dispenser.hasMany(models.Product, {
+            onDelete: "cascade"
+        });
+    };
 
     return Dispenser;
 };
