@@ -8,6 +8,13 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 140]
             }
         },
+        license: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 22]
+            }
+        },
         city: {
             type: DataTypes.STRING,
             allowNull: false,
