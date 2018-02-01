@@ -46,6 +46,7 @@ db.sequelize.sync({ force: true }).then(() => {
     //     cycle: "every september/october"
     // })
     // return db.Dispenser.create({
+    //     grower_name: "McMillan Greens",
     //     dispenser_name: "McMillan Greens",
     //     city: "San Francisco",
     //     state: "CA",

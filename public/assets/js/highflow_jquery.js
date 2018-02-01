@@ -13,24 +13,24 @@ $(document).ready(function() {
     // The code below handles the case where we want to get blog products for a specific grower
     // Looks for a query param in the url for author_id
     var url = window.location.search;
-    var authorId;
+    var growerId;
     if (url.indexOf("?grower_id=") !== -1) {
-      authorId = url.split("=")[1];
-      getPosts(authorId);
+      growerId = url.split("=")[1];
+      getProducts(growerId);
     }
     // If there's no authorId we just get all products as usual
     else {
-      getPosts();
+      getProducts();
     }
   
   
     // This function grabs products from the database and updates the view
-    function getPosts(grower) {
-      authorId = grower || "";
-      if (authorId) {
-        authorId = "/?grower_id=" + authorId;
+    function getProducts(grower) {
+      growerId = grower || "";
+      if (growerId) {
+        growerId = "/?grower_id=" + growerId;
       }
-      $.get("/api/products" + authorId, function(data) {
+      $.get("/api/products" + growerId, function(data) {
         console.log("Posts", data);
         products = data;
         if (!products || !products.length) {
