@@ -13,17 +13,17 @@ module.exports = (app) => {
     // Each of the below routes just handles the HTML page that the user gets sent to.
 
     // index route loads view.html
-    app.get("/", function(req, res) {
+    app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/main.html"));
     });
 
     // growers route loads growers.html
-    app.get("/growers", function(req, res) {
+    app.get("/growers", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/growers.html"));
     });
 
     // dispensers route loads dispensers.html
-    app.get("/dispensers", function(req, res) {
+    app.get("/dispensers", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/dispensers.html"));
     });
 
