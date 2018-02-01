@@ -1,7 +1,5 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-
-    //const methodOverride = require("method-override")
 const cookieParser = require("cookie-parser");
 
 const app = express()
@@ -20,17 +18,18 @@ app.use(bodyParser.json())
 // cookie parser for reading the browser cookie
 app.use(cookieParser())
 
-// app.use(methodOverride("_method"))
 
 //using pug - lea
 app.set('view engine', 'pug');
 
-app.get('/', function (req, res) {
-    res.render('about', {basedir: __dirname});
-  });
+// app.get('/', function(req, res) {
+//     res.render('about', { basedir: __dirname });
+// });
 
 // Routes
-require("./routes/html-routes.js")(app);
+const mainRoutes = require('./routes')
+
+app.use(mainRoutes)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -48,6 +47,7 @@ db.sequelize.sync({ force: true }).then(() => {
     // })
     // return db.Dispenser.create({
     //     grower_name: "McMillan Greens",
+    //     dispenser_name: "McMillan Greens",
     //     city: "San Francisco",
     //     state: "CA",
     //     email: "mcmillan_greens@example.com",
