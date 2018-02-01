@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Dispenser = sequelize.define("Dispenser", {
+    let Dispenser = sequelize.define("Dispenser", {
         // Giving the Dispenser model a name of type STRING
         dispenser_name: {
             type: DataTypes.STRING,
