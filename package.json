@@ -19,9 +19,14 @@
   "homepage": "https://github.com/jMac029/HighFlow#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
     "express": "^4.16.2",
+    "jade-bootstrap": "^1.0.14",
     "method-override": "^2.3.10",
     "mysql2": "^1.5.1",
-    "sequelize": "^4.32.2"
+    "pug": "^2.0.0-rc.4",
+    "pug-bootstrap": "0.0.15",
+    "sequelize": "^4.32.2",
+    "startbootstrap-the-big-picture": "^4.0.0"
   }
 }

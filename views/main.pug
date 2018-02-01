@@ -1,0 +1,90 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  link(href='css/animate.min.css' rel='stylesheet')
+  link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
+  link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
+  link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
+  link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
+  
+  link(rel='stylesheet' href='/assets/css/main.css')
+
+  title HighFlow
+  
+  //navbar
+  nav.navbar.fixed-top.navbar-expand-lg
+    a.navbar-brand(href='layouts.pug') HighFlow
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarNavDropdown.navbar-collapse.collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(href='layouts.pug')
+            | Home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='featured.pug') Featured
+        li.nav-item
+          a.nav-link(href='about.pug') About
+   
+       
+          
+body
+
+.jumbotron
+  div
+  span#high High
+  span#flow Flow
+  p.lead
+    | Begin your search to expand your network today
+.wrapper
+    a(href='growers.pug') 
+        button.btn.btn-secondary.btn-lg(type='button') Growers   
+    a(href='dispensaries.pug') 
+        button.btn.btn-secondary.btn-lg(type='button') Dispensaries
+
+.container
+  // Page Heading
+  h1.my-4
+    | Meet our newest members..
+    
+  .row
+    .col-lg-4.col-sm-6.portfolio-item
+      .card.h-100
+        a(href='https://www.happynhealthysolutions.com/') 
+          img.card-img-top(src='/assets/images/dis1.jpg')
+        .card-body
+          h4.card-title Happy & Healthy Solutions
+            
+          
+    .col-lg-4.col-sm-6.portfolio-item
+      .card.h-100
+        a(href='http://www.buddyboyfarm.com/')
+          img.card-img-top(src='/assets/images/grower2.jpg')
+        .card-body
+          h4.card-title Buddy Boy Farms
+             
+        
+    .col-lg-4.col-sm-6.portfolio-item
+      .card.h-100
+        a(href='http://budandbloomoc.com/')
+          img.card-img-top(src='/assets/images/dis2.jpg')
+        .card-body
+          h4.card-title Bud & Bloom
+            
+          
+   
+
+ 
+ 
+
+//footer    
+nav.navbar.fixed-bottom.navbar.bg
+  a.navbar-brand(href='#') 
+  p.m-0.text-center.text-white &copy; HighFlow 2018
+
+

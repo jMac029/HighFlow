@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+
     //const methodOverride = require("method-override")
 
 const app = express()
@@ -22,6 +23,17 @@ app.use(bodyParser.json());
 
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }))
 // app.set("view engine", "handlebars")
+//using pug - lea
+app.set('view engine', 'pug');
+
+
+
+
+app.get('/', function (req, res) {
+    res.render('about', {basedir: __dirname});
+  });
+
+
 
 // Routes
 require("./routes/html-routes.js")(app);
