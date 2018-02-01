@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+
     //const methodOverride = require("method-override")
 const cookieParser = require("cookie-parser");
 
@@ -21,8 +22,12 @@ app.use(cookieParser())
 
 // app.use(methodOverride("_method"))
 
-// PUG!
-app.set('view engine', 'pug')
+//using pug - lea
+app.set('view engine', 'pug');
+
+app.get('/', function (req, res) {
+    res.render('about', {basedir: __dirname});
+  });
 
 // Routes
 require("./routes/html-routes.js")(app);

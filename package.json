@@ -19,6 +19,7 @@
     "homepage": "https://github.com/jMac029/HighFlow#readme",
     "dependencies": {
         "body-parser": "^1.18.2",
+        "bootstrap": "^4.0.0",
         "cookie-parser": "^1.4.3",
         "express": "^4.16.2",
         "mysql2": "^1.5.1",
