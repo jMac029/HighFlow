@@ -1,0 +1,57 @@
+.jumbotron {
+    width: 80%;
+    height: 600px;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    text-align: center;
+    background: linear-gradient(to bottom right,#253127,#27e217);
+    font-family: 'Courgette', cursive;
+    box-shadow: 3px 3px 3px 4px #1b1b17;
+    vertical-align: middle;
+    margin: 0 auto;
+    
+    }
+
+    nav {
+        background-color: #1b1b17;
+        box-shadow: 0 0 3px 4px #1b1b17;
+        font-family: 'Courgette', cursive;
+        margin-bottom: 30px;
+        }
+    
+      a {
+        color: #c0c0b2;
+        font-family: 'Courgette', cursive;
+      }
+    
+      a.btn {
+        background-color: #3a3a2d;
+        color: #c0c0b2;
+        box-shadow: 0 0 2px 1px #24572c;
+      }
+    
+    h1 {
+      font-family: 'Shrikhand', cursive;
+      color: #c0c0b2;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      margin: 0;
+     
+    }
+
+    body {
+  
+        background: url(https://s3.envato.com/files/34839414/preview_image.jpg)
+        no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+    footer {
+        background-color: #1b1b17;
+        box-shadow: 0 0 3px 4px #1b1b17;
+        font-family: 'Courgette', cursive;
+
+    }
+  
