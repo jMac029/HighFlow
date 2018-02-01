@@ -35,25 +35,25 @@ require("./routes/html-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(() => {
-    return db.Grower.create({
-        grower_name: "McMillan Farms",
-        city: "Forbestown",
-        state: "CA",
-        email: "mcmillan_farms@example.com",
-        bio: "Jesus told me to do it.",
-        grow_method: "I plant in the best soil known to man Chicken Manuare and Steer Manuare blend.",
-        indoor: false,
-        strains: "Sativa and Indiga",
-        cycle: "every september/october"
-    })
-    return db.Dispenser.create({
-        grower_name: "McMillan Greens",
-        city: "San Francisco",
-        state: "CA",
-        email: "mcmillan_greens@example.com",
-        bio: "Jesus told me to do it.",
-        strains_wanted: "Sativa and Indiga"
-    })
+    // return db.Grower.create({
+    //     grower_name: "McMillan Farms",
+    //     city: "Forbestown",
+    //     state: "CA",
+    //     email: "mcmillan_farms@example.com",
+    //     bio: "Jesus told me to do it.",
+    //     grow_method: "I plant in the best soil known to man Chicken Manuare and Steer Manuare blend.",
+    //     indoor: false,
+    //     strains: "Sativa and Indiga",
+    //     cycle: "every september/october"
+    // })
+    // return db.Dispenser.create({
+    //     grower_name: "McMillan Greens",
+    //     city: "San Francisco",
+    //     state: "CA",
+    //     email: "mcmillan_greens@example.com",
+    //     bio: "Jesus told me to do it.",
+    //     strains_wanted: "Sativa and Indiga"
+    // })
     app.listen(PORT, () => {
         console.log("App listening on PORT " + PORT);
     })
