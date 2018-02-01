@@ -7,6 +7,13 @@ CREATE TABLE growers
 (
 	id int NOT NULL AUTO_INCREMENT,
 	grower_name varchar(255) NOT NULL,
+	location NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	bio VARCHAR(280) NOT NULL,
+	grow_method(280) NOT NULL,
+	indoor BOOLEAN,
+	strains VARCHAR(280),
+	cycle VARCHAR(280) NOT NULL,
 	PRIMARY KEY (id)
 );
 
