@@ -22,6 +22,7 @@ app.use(cookieParser())
 //using pug - lea
 app.set('view engine', 'pug');
 
+
 // app.get('/', function(req, res) {
 //     res.render('about', { basedir: __dirname });
 // });
@@ -46,6 +47,7 @@ db.sequelize.sync({ force: true }).then(() => {
     //     cycle: "every september/october"
     // })
     // return db.Dispenser.create({
+    //     grower_name: "McMillan Greens",
     //     dispenser_name: "McMillan Greens",
     //     city: "San Francisco",
     //     state: "CA",
