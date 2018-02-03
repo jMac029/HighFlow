@@ -45,7 +45,7 @@
     font-size: 65px;
     color: #c0c0b2;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    margin: 0;
+    margin-top: 10px;
   }
   
   #flow {
@@ -64,7 +64,7 @@
   
   body {
   
-    background: url(https://s3.envato.com/files/34839414/preview_image.jpg)
+    background-image: url('../images/green10.jpg');
     no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -75,7 +75,8 @@
   .wrapper {
     width: 100%;
     text-align: center;
-    height: 100px;
+    height: 50px;
+    margin-bottom: 0px;
     
     
   }
@@ -87,11 +88,21 @@
       
   }
 
-  .container {
-      margin: 0 auto;
-      padding-bottom: 50px;
+  .col-lg-4.col-sm-6.portfolio-item {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+    
+      
      
   }
+
+  .my-4 {
+  
+    margin-left: 20px;
+  }
+
+
 
 
 

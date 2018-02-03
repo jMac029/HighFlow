@@ -1,23 +1,29 @@
 .jumbotron {
   width: 80%;
-  height: 550px;
+  height: 580px;
+  overflow: auto;   
   border-radius: 25px;
   border: 2px solid #73AD21;
-  text-align: center;
-  background: linear-gradient(to bottom right,#253127,#27e217);
+  background-color: #e0e0c8;
   font-family: 'Courgette', cursive;
   box-shadow: 3px 3px 3px 4px #1b1b17;
   vertical-align: middle;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   
+  }
+
+  .display-4 {
+    text-align: left;
+    font-size: 30px;
+    padding: 10px;
   }
 
   .navbar.navbar-expand-lg {
       background-color: #1b1b17;
       box-shadow: 0 0 3px 4px #1b1b17;
       font-family: 'Courgette', cursive;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
      
       }
   
@@ -32,23 +38,24 @@
       box-shadow: 0 0 2px 1px #24572c;
     }
   
-    .display-4 {
+  h1 {
     font-family: 'Shrikhand', cursive;
     color: #c0c0b2;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: left;
-    font-size: 40px;
+    font-size: 20px;
    
   }
 
   body {
-    background-image: url('../images/green10.jpg');
-    no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+
+      background-image: url('../images/green10.jpg');
+      no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
   
     .navbar.fixed-bottom.navbar.bg {
       background-color: #1b1b17;
@@ -57,7 +64,21 @@
 
 
     }
-    
 
-   
-  
+    .card {
+      flex: 1;
+      width: 80%;
+      vertical-align: middle;
+      margin: 0 auto;
+      border: 2px solid #73AD21;
+      border-radius: 25px;
+    }
+
+    img {
+      width: 300px;
+      height: 200px;
+    }
+
+    .btn.btn-info.btn-lg {
+      background-color: #3a3a2d;
+    }
