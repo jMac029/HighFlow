@@ -1,21 +1,19 @@
 doctype html
 head
-  // Required meta tags
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  // Bootstrap CSS
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  link(href='css/animate.min.css' rel='stylesheet')
-  link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
-  link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
-  
-  link(rel='stylesheet' href='/assets/css/highflow_style.css')
-
-  title HighFlow
-  
-  //navbar
+  block title
+    title HighFlow
+  block links
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
+  block css
+    link(rel='stylesheet' href='/assets/css/highflow_style.css')
+body
+  block nav
   nav.navbar.navbar-expand-lg
     a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
@@ -32,14 +30,12 @@ head
           a.nav-link(href='/about') About
       ul.navbar-nav
         li.nav-item.dropdown
-          
         li.nav-item
           a.nav-link(href="{{ url('/login') }}") Login
         li.nav-item
           a.nav-link(href="{{ url('/register') }}") 
-          
-block main
-  body
+
+  block contents
 
     .jumbotron
       div
@@ -51,29 +47,27 @@ block main
       p
         | Locations available in Orange, San Diego and LA Counties
       p.lead
-        a.btn.btn-primary.btn-lg(href='/join' role='button') Join
-
-        //slideshow/carousel
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 50%; margin: 0 auto;')
+        a.btn.btn-primary.btn-lg(href='#' role='button') Join
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 40%; margin: 0 auto;')
       ol.carousel-indicators
         li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
         li(data-target='#carouselExampleIndicators' data-slide-to='1')
         li(data-target='#carouselExampleIndicators' data-slide-to='2')
       .carousel-inner
         .carousel-item.active
-          img.d-block.w-100(src='/assets/images/weed1crop.jpg' alt='First slide')
+          img.d-block.w-100(src='/assets/images/grower1.jpg' alt='First slide')
           .carousel-caption.d-none.d-md-block
-            h5 Local Growers
-            p Meet legal growers in your area who will help you maintain your supply
+            h5 ~ Local Growers ~
+            p Meet legal growers who can expand your stock
         .carousel-item
-          img.d-block.w-100(src='/assets/images/weed2crop.jpg' alt='Second slide')
+          img.d-block.w-100(src='/assets/images/weed5.jpg' alt='Second slide')
           .carousel-caption.d-none.d-md-block
-            h5 New Product
+            h5 ~ New Product ~
             p Keep up to date with the newest strains in your area
         .carousel-item
-          img.d-block.w-100(src='/assets/images/weed4crop.jpg' alt='Third slide')
+          img.d-block.w-100(src='/assets/images/dis3.jpg' alt='Third slide')
           .carousel-caption.d-none.d-md-block
-            h5 Dispensaries
+            h5 ~ Dispensaries ~
             p Find licensed distributors who will keep your supply in demand
       a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
@@ -81,9 +75,13 @@ block main
       a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
         span.carousel-control-next-icon(aria-hidden='true')
         span.sr-only Next
-  // Optional JavaScript
-  script(src='/assets/js/highflow_jquery.js')
-  // jQuery first, then Popper.js, then Bootstrap JS
-  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+  block scripts
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+  block footer  
+    nav.navbar.fixed-bottom.navbar.bg
+      a.navbar-brand(href='#') 
+      p.m-0.text-center.text-white &copy; HighFlow 2018
+   
+

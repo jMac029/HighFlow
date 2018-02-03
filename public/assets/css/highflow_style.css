@@ -1,9 +1,9 @@
 
 .jumbotron {
   width: 100%;
-  height: 350px;
+  height: 340px;
   text-align: center;
-  background: linear-gradient(to bottom right,#253127,#27e217);
+  background: linear-gradient(#253127,#27e217);
   margin: auto 0;
   margin-bottom: 10px;
   font-family: 'Courgette', cursive;
@@ -53,10 +53,14 @@ height: 350px;
 }
 
 body {
+    background-image: url('../images/green10.jpg');
+    no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-  background-color: #1b1b17;
-  background: linear-gradient(to bottom right, #85be83,black);
-}
 
 @include media-breakpoint-up(sm) {.carousel {
   box-shadow: 0 0 3px 3px #1b1b17;;
@@ -66,14 +70,16 @@ body {
 }}
 
 .carousel-caption, h5 {
-  color: black;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: #080e09;
+  text-shadow: -1px 0 #a7a3a3, 0 1px #a7a3a3, 1px 0 #a7a3a3, 0 -1px #a7a3a3;
   font-size: 30px;
-  font-style: thick;
+  font-weight: bold;
   font-family: 'Courgette', cursive;
 
 
 }
+
+
   
 
 
