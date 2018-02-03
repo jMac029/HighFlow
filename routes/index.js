@@ -62,6 +62,14 @@ router.post('/join', (req, res) => {
     res.redirect('/');
 })
 
+// join route for post
+router.post("/join", (req, res) => {
+    res.cookie('username', req.body.username)
+    res.redirect('/')
+    // let userType = (res.body.userTypeOptions)
+    // console.log(userType)
+})
+
 // login route loads login
 router.get("/login", (req, res) => {
     res.render('login', { basedir: __dirname })
