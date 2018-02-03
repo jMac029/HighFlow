@@ -17,19 +17,19 @@ head
   
   //navbar
   nav.navbar.fixed-top.navbar-expand-lg
-    a.navbar-brand(href='layouts.pug') HighFlow
+    a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarNavDropdown.navbar-collapse.collapse
       ul.navbar-nav.mr-auto
         li.nav-item.active
-          a.nav-link(href='layouts.pug')
+          a.nav-link(href='/main')
             | Home 
             span.sr-only (current)
         li.nav-item
-          a.nav-link(href='featured.pug') Featured
+          a.nav-link(href='/featured') Featured
         li.nav-item
-          a.nav-link(href='about.pug') About
+          a.nav-link(href='/about') About
    
        
           
@@ -42,9 +42,9 @@ body
   p.lead
     | Begin your search to expand your network today
 .wrapper
-    a(href='growers.pug') 
+    a(href='/growers') 
         button.btn.btn-secondary.btn-lg(type='button') Growers   
-    a(href='dispensaries.pug') 
+    a(href='/dispensaries') 
         button.btn.btn-secondary.btn-lg(type='button') Dispensaries
 
 .container

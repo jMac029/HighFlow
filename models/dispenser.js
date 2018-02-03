@@ -1,11 +1,18 @@
 module.exports = function(sequelize, DataTypes) {
-    let Dispenser = sequelize.define("Dispenser", {
+    let dispenser = sequelize.define("Dispenser", {
         // Giving the Dispenser model a name of type STRING
         dispenser_name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 140]
+            }
+        },
+        license: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 22]
             }
         },
         city: {
@@ -45,13 +52,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Dispenser.associate = function(models) {
-        // Associating Dispenser with Products
-        // When an Dispenser is deleted, also delete any associated Products
-        Dispenser.hasMany(models.Product, {
-            onDelete: "cascade"
-        });
-    };
+    // dispenser.associate = function(models) {
+    //     // Associating Dispenser with Products
+    //     // When an Dispenser is deleted, also delete any associated Products
+    //     dispenser.hasMany(models.product, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
-    return Dispenser;
+    return dispenser;
 };

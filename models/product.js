@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let Product = sequelize.define("Product", {
+    let product = sequelize.define("Product", {
         product_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,15 +28,15 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    Product.associate = (models) => {
-        // We're saying that a Product should belong to an Author
-        // A Product can't be created without an Author due to the foreign key constraint
-        Product.belongsTo(models.Grower, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // product.associate = (models) => {
+    //     // We're saying that a Product should belong to an Author
+    //     // A Product can't be created without an Author due to the foreign key constraint
+    //     product.belongsTo(models.grower, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
-    return Product;
+    return product;
 };
