@@ -1,24 +1,5 @@
 doctype html
 head
-<<<<<<< HEAD
-  // Required meta tags
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  // Bootstrap CSS
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  link(href='css/animate.min.css' rel='stylesheet')
-  link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
-  link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
-  
-  // Stylesheet
-  link(rel='stylesheet' href='/assets/css/highflow_style.css')
-
-  title HighFlow
-  
-  //navbar
-=======
   block title
     title HighFlow
   block links
@@ -33,7 +14,6 @@ head
     link(rel='stylesheet' href='/assets/css/highflow_style.css')
 body
   block nav
->>>>>>> front-end
   nav.navbar.navbar-expand-lg
     a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
@@ -55,15 +35,16 @@ body
         li.nav-item
           a.nav-link(href="{{ url('/register') }}") 
 
-.jumbotron
-  div
-  span#high High
-  span#flow Flow
-  p.lead
-    | Join the largest network of licensed Marijuna growers and distributors in Southern California
-  hr.my-4
-  p
-    | Locations available in Orange, San Diego and LA Counties
+block contents
+  .jumbotron
+    div
+    span#high High
+    span#flow Flow
+    p.lead
+      | Join the largest network of licensed Marijuna growers and distributors in Southern California
+    hr.my-4
+    p
+      | Locations available in Orange, San Diego and LA Counties
 
   // Modals
   // * Button for Modal *
@@ -165,41 +146,45 @@ body
 
 
     //slideshow/carousel
-#carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 50%; margin: 0 auto;')
-  ol.carousel-indicators
-    li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-    li(data-target='#carouselExampleIndicators' data-slide-to='1')
-    li(data-target='#carouselExampleIndicators' data-slide-to='2')
-  .carousel-inner
-    .carousel-item.active
-      img.d-block.w-100(src='/assets/images/weed1crop.jpg' alt='First slide')
-      .carousel-caption.d-none.d-md-block
-        h5 Local Growers
-        p Meet legal growers in your area who will help you maintain your supply
-    .carousel-item
-      img.d-block.w-100(src='/assets/images/weed2crop.jpg' alt='Second slide')
-      .carousel-caption.d-none.d-md-block
-        h5 New Product
-        p Keep up to date with the newest strains in your area
-    .carousel-item
-      img.d-block.w-100(src='/assets/images/weed4crop.jpg' alt='Third slide')
-      .carousel-caption.d-none.d-md-block
-        h5 Dispensaries
-        p Find licensed distributors who will keep your supply in demand
-  a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-    span.carousel-control-prev-icon(aria-hidden='true')
-    span.sr-only Previous
-  a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-    span.carousel-control-next-icon(aria-hidden='true')
-    span.sr-only Next
+  #carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 50%; margin: 0 auto;')
+    ol.carousel-indicators
+      li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+      li(data-target='#carouselExampleIndicators' data-slide-to='1')
+      li(data-target='#carouselExampleIndicators' data-slide-to='2')
+    .carousel-inner
+      .carousel-item.active
+        img.d-block.w-100(src='/assets/images/weed1crop.jpg' alt='First slide')
+        .carousel-caption.d-none.d-md-block
+          h5 Local Growers
+          p Meet legal growers in your area who will help you maintain your supply
+      .carousel-item
+        img.d-block.w-100(src='/assets/images/weed2crop.jpg' alt='Second slide')
+        .carousel-caption.d-none.d-md-block
+          h5 New Product
+          p Keep up to date with the newest strains in your area
+      .carousel-item
+        img.d-block.w-100(src='/assets/images/weed4crop.jpg' alt='Third slide')
+        .carousel-caption.d-none.d-md-block
+          h5 Dispensaries
+          p Find licensed distributors who will keep your supply in demand
+    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+      span.carousel-control-prev-icon(aria-hidden='true')
+      span.sr-only Previous
+    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+      span.carousel-control-next-icon(aria-hidden='true')
+      span.sr-only Next
 
 
 // Optional JavaScript
 // jQuery first, then Popper.js, then Bootstrap JS
-script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
-script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+block scripts
+  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
 
-  // Javascript for Modals
-  script(src='../public/assets/js/join.js')
+
+block footer
+  nav.navbar.fixed-bottom.bg
+    a.navbar-brand(href='/')
+    p.m-0.text-center.text-white &copy; HighFlow 2018
 
