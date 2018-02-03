@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Grower = sequelize.define("Grower", {
+    let grower = sequelize.define("Grower", {
         // Giving the Grower model a name of type STRING
         grower_name: {
             type: DataTypes.STRING,
@@ -70,13 +70,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
 
-    Grower.associate = function(models) {
-        // Associating Grower with Products
-        // When an Grower is deleted, also delete any associated Products
-        Grower.hasMany(models.Product, {
-            onDelete: "cascade"
-        });
-    };
+    // grower.associate = function(models) {
+    //     // Associating Grower with Products
+    //     // When an Grower is deleted, also delete any associated Products
+    //     grower.hasMany(models.product, {
+    //         onDelete: "cascade"
+    //     });
+    // };
 
-    return Grower;
+    return grower;
 };
