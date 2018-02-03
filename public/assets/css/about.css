@@ -4,12 +4,13 @@
   border-radius: 25px;
   border: 2px solid #73AD21;
   text-align: center;
-  background: linear-gradient(to bottom right,#253127,#27e217);
+  background: linear-gradient(#0e130f,#40853b);
   font-family: 'Courgette', cursive;
   box-shadow: 3px 3px 3px 4px #1b1b17;
   vertical-align: middle;
   margin: 0 auto;
   padding: 20px;
+  
   
   }
 
@@ -25,6 +26,10 @@
       color: #c0c0b2;
       font-family: 'Courgette', cursive;
     }
+
+    a:hover {
+      color: #3f8a4a;
+    }
   
     a.btn {
       background-color: #3a3a2d;
@@ -34,7 +39,7 @@
   
     .display-4 {
     font-family: 'Shrikhand', cursive;
-    color: #c0c0b2;
+    color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: left;
     font-size: 40px;
@@ -57,6 +62,33 @@
 
 
     }
+    .lead {
+      color: #ffffff;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      font-family: 'Courgette', cursive;
+      font-size: 20px;
+    }
+
+    .col-md-3.col-sm-6.portfolio-item {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      margin-bottom: 50px;
+      width: 100%;
+      margin-left: 60px;
+      
+    }
+
+    img {
+  
+      width: 100%;
+      height: 180px;
+      }
+
+    .card-title {
+      height: 20px;
+    }
+
+
     
 
    
