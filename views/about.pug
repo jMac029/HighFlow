@@ -1,22 +1,8 @@
-doctype html
-head
-  // Required meta tags
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  // Bootstrap CSS
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  link(href='css/animate.min.css' rel='stylesheet')
-  link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
-  link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
-  
+extends layouts.pug
+block css
   link(rel='stylesheet' href='/assets/css/about.css')
-
-  title HighFlow
-  
-  //navbar
-  nav.navbar.top.navbar-expand-lg
+block nav
+  nav.navbar.fixed-top.navbar-expand-lg
     a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
@@ -30,20 +16,8 @@ head
           a.nav-link(href='/featured') Featured
         li.nav-item
           a.nav-link(href='/about') About
-      
-       
-body
+block contents
+  .jumbotron.jumbotron-fluid
+    h1.display-4 Our Mission..
+    p.lead
 
-
-    .jumbotron.jumbotron-fluid
-  
-        h1.display-4 Our Mission
-        p.lead
-        | 
-
-
-//footer 
-footer.navbar.fixed-bottom.navbar.bg
-  a.navbar-brand(href='#') 
-  p.m-0.text-center.text-white &copy; HighFlow 2018
-  
