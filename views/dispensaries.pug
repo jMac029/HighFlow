@@ -1,21 +1,7 @@
-doctype html
-head
-  // Required meta tags
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-  // Bootstrap CSS
-  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-  link(href='css/animate.min.css' rel='stylesheet')
-  link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
-  link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
-  link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
-  
-  link(rel='stylesheet' href='/assets/css/main.css')
-
-  title HighFlow
-  
-  //navbar
+extends layouts.pug
+block css
+  link(rel='stylesheet' href='/assets/css/lists.css')
+block nav
   nav.navbar.fixed-top.navbar-expand-lg
     a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
@@ -30,20 +16,42 @@ head
           a.nav-link(href='/featured') Featured
         li.nav-item
           a.nav-link(href='/about') About
-      ul.navbar-nav
-        li.nav-item.dropdown
-          a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-            | Search
-          .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
-            a.dropdown-item(href='/growers') Growers
-            a.dropdown-item(href='/dispensaries') Dispensaries
-       
-          
-body
+block contents
+  .jumbotron.jumbotron-fluid
+    p.display-4 Local dispensaries closest to you:
+    p.lead
+      .card
+        h5.card-header Cannabliss
+        .card-body
+          img.rounded.float-right(src='/assets/images/dis4.jpg' alt='dis1')
+          h5.card-title One of the greatest representatives of the Cannabis industry
+          p.card-text Originally established in Oregon we have expanded to CA
+          button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
+          #myModal.modal.fade(role='dialog')
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h4.modal-title Cannabliss
+                .modal-body
+                  a(href='#') www.cannabliss.com
+                  p 555 Newport Ave, Irvine, CA 92660
+                  p (714) 555-1234
+                .modal-footer
+                  button.btn.btn-default(type='button' data-dismiss='modal') Close
+      .card
+        h5.card-header Featured
+        .card-body
+          h5.card-title Special title treatment
+          img.rounded.float-right(src='...' alt='...')
+          p.card-text With supporting text below as a natural lead-in to additional content.
+          a.btn.btn-primary(href='#') Go somewhere
+      .card
+        h5.card-header Featured
+        .card-body
+          h5.card-title Special title treatment
+          img.rounded.float-right(src='...' alt='...')
+          p.card-text With supporting text below as a natural lead-in to additional content.
+          a.btn.btn-primary(href='#') Go somewhere
+  
 
 
-
-//footer   
-nav.navbar.bottom.navbar.bg
-  a.navbar-brand(href='#') 
-  p.m-0.text-center.text-white &copy; HighFlow 2018
