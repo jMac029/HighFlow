@@ -1,0 +1,10 @@
+extends layouts
+
+block main
+
+  form.form.text-center#high(action='/join', method='post')
+    label.text-center Please enter your name:
+      input.namecard-name(type='text', name='username' placeholder='name')
+    button.btn.btn-secondary.btn-lg.submit(type='submit') Submit
+
+  

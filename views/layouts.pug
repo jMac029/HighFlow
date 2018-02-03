@@ -1,5 +1,6 @@
 doctype html
 head
+<<<<<<< HEAD
   // Required meta tags
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
@@ -17,6 +18,22 @@ head
   title HighFlow
   
   //navbar
+=======
+  block title
+    title HighFlow
+  block links
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
+  block css
+    link(rel='stylesheet' href='/assets/css/highflow_style.css')
+body
+  block nav
+>>>>>>> front-end
   nav.navbar.navbar-expand-lg
     a.navbar-brand(href='/') HighFlow
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
@@ -33,13 +50,10 @@ head
           a.nav-link(href='/about') About
       ul.navbar-nav
         li.nav-item.dropdown
-          
         li.nav-item
           a.nav-link(href="{{ url('/login') }}") Login
         li.nav-item
           a.nav-link(href="{{ url('/register') }}") 
-          
-body
 
 .jumbotron
   div
@@ -188,3 +202,4 @@ script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
 
   // Javascript for Modals
   script(src='../public/assets/js/join.js')
+
