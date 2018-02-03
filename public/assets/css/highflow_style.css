@@ -54,12 +54,8 @@ height: 350px;
 
 body {
 
-  background: url(https://s3.envato.com/files/34839414/preview_image.jpg)
-  no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #1b1b17;
+  background: linear-gradient(to bottom right, #85be83,black);
 }
 
 @include media-breakpoint-up(sm) {.carousel {
