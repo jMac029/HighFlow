@@ -1,4 +1,3 @@
-
 // $('#myModal').on('shown.bs.modal', function () {
 //     $('#myInput').focus()
 //   })
@@ -15,7 +14,7 @@
 // $('#modal2').modal({
 //     show: false
 //   })
-$(document).ready(function(){
+$(document).ready(function() {
     $("#signup-modal").on("click", function(event) {
         event.preventDefault();
         console.log("button clicked!!!!")
@@ -37,7 +36,7 @@ $(document).ready(function(){
                 $(".typeuser").hide()
                 $(".dispenser-form").show()
             }
-                
+
         });
     });
 });

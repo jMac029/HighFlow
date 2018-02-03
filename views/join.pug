@@ -29,10 +29,10 @@ block contents
                         option Dispenser
                     button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                     button#userTypeBttn.btn.btn-primary(type='submit') Continue
-                form.grower-form
+                form.grower-form(action='/join', method='post')
                     .form-group
                         label.form-control-label(for='grower-name') Name:
-                        input#grower-name.form-control(type='text')
+                        input#grower-name.form-control(type='text' name='username')
                         label.form-control-label(for='grower-license') License ID:
                         input#grower-license.form-control(type='text')
                         label.form-control-label(for='grower-city') City:
@@ -55,11 +55,11 @@ block contents
                         label.form-control-label(for='grower-cycle') Cycle:
                         input#grower-cycle.form-control(type='text')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button#growerBttn.btn.btn-primary(type='button') Submit
-                form.dispenser-form
+                        button#growerBttn.btn.btn-primary(type='submit') Submit
+                form.dispenser-form(action='/join', method='post')
                     .form-group
                         label.form-control-label(for='dispenser-name') Name:
-                        input#dispenser-name.form-control(type='text')
+                        input#dispenser-name.form-control(type='text' name='username')
                         label.form-control-label(for='dispenser-license') License ID:
                         input#dispenser-license.form-control(type='text')
                         label.form-control-label(for='dispenser-city') City:
@@ -73,7 +73,7 @@ block contents
                         label.form-control-label(for='dispenser-strains') Strains Wanted:
                         input#dispenser-strains-wanted.form-control(type='text')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button.btn.btn-primary(type='button') Submit
+                        button.btn.btn-primary(type='submit') Submit
             
 
         //-#modal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='joinForGrower' aria-hidden='true')
@@ -113,6 +113,7 @@ block contents
 
         //- Javascript for Modals
         script(src='/assets/js/join.js')
+        //- script(src='/assets/js/grower.js')
         
 
   

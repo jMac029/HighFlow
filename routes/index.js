@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const path = require("path");
+const path = require("path")
 
-// name cookie from the join page
+
+var db = require("../models");
 
 
 router.get('/', (req, res) => {
@@ -60,14 +61,6 @@ router.get("/join", (req, res) => {
 router.post('/join', (req, res) => {
     res.cookie('username', req.body.username);
     res.redirect('/');
-})
-
-// join route for post
-router.post("/join", (req, res) => {
-    res.cookie('username', req.body.username)
-    res.redirect('/')
-    // let userType = (res.body.userTypeOptions)
-    // console.log(userType)
 })
 
 // login route loads login
