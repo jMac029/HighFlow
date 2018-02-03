@@ -38,50 +38,52 @@ head
         li.nav-item
           a.nav-link(href="{{ url('/register') }}") 
           
-body
+block main
+  body
 
-.jumbotron
-  div
-  span#high High
-  span#flow Flow
-  p.lead
-    | Join the largest network of licensed Marijuna growers and distributors in Southern California
-  hr.my-4
-  p
-    | Locations available in Orange, San Diego and LA Counties
-  p.lead
-    a.btn.btn-primary.btn-lg(href='#' role='button') Join
+    .jumbotron
+      div
+      span#high High
+      span#flow Flow
+      p.lead
+        | Join the largest network of licensed Marijuna growers and distributors in Southern California
+      hr.my-4
+      p
+        | Locations available in Orange, San Diego and LA Counties
+      p.lead
+        a.btn.btn-primary.btn-lg(href='/join' role='button') Join
 
-    //slideshow/carousel
-#carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 50%; margin: 0 auto;')
-  ol.carousel-indicators
-    li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-    li(data-target='#carouselExampleIndicators' data-slide-to='1')
-    li(data-target='#carouselExampleIndicators' data-slide-to='2')
-  .carousel-inner
-    .carousel-item.active
-      img.d-block.w-100(src='/assets/images/weed1crop.jpg' alt='First slide')
-      .carousel-caption.d-none.d-md-block
-        h5 Local Growers
-        p Meet legal growers in your area who will help you maintain your supply
-    .carousel-item
-      img.d-block.w-100(src='/assets/images/weed2crop.jpg' alt='Second slide')
-      .carousel-caption.d-none.d-md-block
-        h5 New Product
-        p Keep up to date with the newest strains in your area
-    .carousel-item
-      img.d-block.w-100(src='/assets/images/weed4crop.jpg' alt='Third slide')
-      .carousel-caption.d-none.d-md-block
-        h5 Dispensaries
-        p Find licensed distributors who will keep your supply in demand
-  a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-    span.carousel-control-prev-icon(aria-hidden='true')
-    span.sr-only Previous
-  a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-    span.carousel-control-next-icon(aria-hidden='true')
-    span.sr-only Next
-// Optional JavaScript
-// jQuery first, then Popper.js, then Bootstrap JS
-script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
-script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+        //slideshow/carousel
+    #carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 50%; margin: 0 auto;')
+      ol.carousel-indicators
+        li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+        li(data-target='#carouselExampleIndicators' data-slide-to='1')
+        li(data-target='#carouselExampleIndicators' data-slide-to='2')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/assets/images/weed1crop.jpg' alt='First slide')
+          .carousel-caption.d-none.d-md-block
+            h5 Local Growers
+            p Meet legal growers in your area who will help you maintain your supply
+        .carousel-item
+          img.d-block.w-100(src='/assets/images/weed2crop.jpg' alt='Second slide')
+          .carousel-caption.d-none.d-md-block
+            h5 New Product
+            p Keep up to date with the newest strains in your area
+        .carousel-item
+          img.d-block.w-100(src='/assets/images/weed4crop.jpg' alt='Third slide')
+          .carousel-caption.d-none.d-md-block
+            h5 Dispensaries
+            p Find licensed distributors who will keep your supply in demand
+      a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+  // Optional JavaScript
+  script(src='/assets/js/highflow_jquery.js')
+  // jQuery first, then Popper.js, then Bootstrap JS
+  script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
