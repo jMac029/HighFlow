@@ -38,6 +38,13 @@ router.get("/join", (req, res) => {
     res.render('join', { basedir: __dirname });
 });
 
+// join route for post
+router.post("/join", (req, res) => {
+    //res.cookie('')
+    let userType = (res.body.userTypeOptions)
+    console.log(userType)
+})
+
 // login route loads login
 router.get("/login", (req, res) => {
     res.render('login', { basedir: __dirname });

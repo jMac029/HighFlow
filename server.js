@@ -3,7 +3,10 @@ const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser");
 
 const app = express()
-const PORT = process.env.PORT || 8080
+//const PORT = process.env.PORT || 8080
+
+// meeso port
+const PORT = process.env.PORT || 8081
 
 let db = require("./models")
 
