@@ -1,23 +1,28 @@
 extends layouts.pug
 block css
   link(rel='stylesheet' href='/assets/css/about.css')
-block nav
-  nav.navbar.fixed-top.navbar-expand-lg
-    a.navbar-brand(href='/') HighFlow
-    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarNavDropdown.navbar-collapse.collapse
-      ul.navbar-nav.mr-auto
-        li.nav-item.active
-          a.nav-link(href='/main')
-            | Home 
-            span.sr-only (current)
-        li.nav-item
-          a.nav-link(href='/featured') Featured
-        li.nav-item
-          a.nav-link(href='/about') About
 block contents
   .jumbotron.jumbotron-fluid
     h1.display-4 Our Mission..
-    p.lead
-
+    p.lead As the movement to end marijuana prohibition extends beyond a handful of states, we are commited to standing at the forefront to provide people crucial networking connections to help expand their business.
+    h1.display-4 Our Developers
+    .container
+      .row
+        .col-md-3.col-sm-6.portfolio-item
+          .card.h-100
+            a(href='https://github.com/yangmeeso') 
+              img.card-img-top(src='/assets/images/meeso.jpg')
+            .card-body
+              h4.card-title Meeso
+        .col-md-3.col-sm-6.portfolio-item
+          .card.h-100
+            a(href='https://github.com/jMac029')
+              img.card-img-top(src='/assets/images/james.jpg')
+            .card-body
+              h4.card-title James
+        .col-md-3.col-sm-6.portfolio-item
+          .card.h-100
+            a(href='https://github.com/lcalderon123')
+              img.card-img-top(src='/assets/images/lea.jpg')
+            .card-body
+              h4.card-title Lea
