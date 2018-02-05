@@ -30,13 +30,26 @@ router.get("/api/growers/:id", (req, res) => {
     });
 });
 
-router.post("/api/growers", (req, res) => {
-    db.grower.create(req.body).then(function(dbGrower) {
-        res.json(dbGrower);
-    });
-    res.cookie('username', req.body.username);
-    res.redirect('/growers');
-});
+router.post('/api/growers', (req, res) => {
+    res.cookie('username', req.body.username)
+    db.Grower.create({
+            grower_name: req.body.username,
+            license: req.body.grower_license,
+            city: req.body.grower_city,
+            state: req.body.grower_state,
+            email: req.body.grower_email,
+            bio: req.body.grower_bio,
+            //indoor: req.body.grower.indoor,
+            strains: req.body.grower_strains,
+            cycle: req.body.grower_cycle
+        }).then((dbGrower) => {
+            // res.cookie('username', req.body.username)
+            res.redirect('/growers')
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
 
 router.delete("/api/growers/:id", (req, res) => {
     db.grower.destroy({
