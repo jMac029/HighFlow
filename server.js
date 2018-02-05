@@ -3,7 +3,7 @@ const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser");
 
 const app = express()
-//const PORT = process.env.PORT || 8080
+    //const PORT = process.env.PORT || 8080
 
 // meeso port
 const PORT = process.env.PORT || 8081
@@ -32,12 +32,14 @@ app.set('view engine', 'pug');
 
 // Routes
 const mainRoutes = require('./routes')
+const apiRoutes = require('./routes/api-routes.js')
 
 app.use(mainRoutes)
+app.use(apiRoutes)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     // return db.Grower.create({
     //     grower_name: "McMillan Farms",
     //     city: "Forbestown",
