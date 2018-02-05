@@ -1,4 +1,3 @@
-
 // $('#myModal').on('shown.bs.modal', function () {
 //     $('#myInput').focus()
 //   })
@@ -15,12 +14,12 @@
 // $('#modal2').modal({
 //     show: false
 //   })
-$(document).ready(function(){
+$(document).ready(function() {
     $("#signup-modal").on("click", function(event) {
         event.preventDefault();
         console.log("button clicked!!!!")
         $('.modal-body').modal()
-        console.log($('.typeuser'))
+            //console.log($('.typeuser'))
         $(".typeuser").show()
         $(".grower-form").hide()
         $(".dispenser-form").hide()
@@ -37,7 +36,24 @@ $(document).ready(function(){
                 $(".typeuser").hide()
                 $(".dispenser-form").show()
             }
-                
+
         });
     });
+
+    // $("#growerBttn").on("submit", function(event) {
+    //     event.preventDefault();
+    //     let growerData = {
+    //         grower_name: $("#grower-name").val().trim(),
+    //         license: $("#grower-license").val().trim(),
+    //         city: $("#grower-city").val().trim(),
+    //         state: $("#grower-state").val().trim(),
+    //         email: $("#grower-email").val().trim(),
+    //         bio: $("#grower-bio").val().trim(),
+    //         indoor: $("#grower-indoor"),
+    //         strains: $("#grower-strains").val().trim(),
+    //         cycle: $("#grower-cycle").val().trim()
+    //     }
+    //     console.log(growerData)
+    //     $.post("/api/growers", growerData)
+    // })
 });
