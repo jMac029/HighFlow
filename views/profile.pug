@@ -1,0 +1,173 @@
+block layouts
+block css
+    link(rel='stylesheet' href='/assets/css/profile.css')
+block contents
+    .container
+        .row.my-2
+            .col-lg-8.order-lg-2
+            ul.nav.nav-tabs
+                li.nav-item
+                a.nav-link.active(href='' data-target='#profile' data-toggle='tab') Profile
+                li.nav-item
+                a.nav-link(href='' data-target='#messages' data-toggle='tab') Messages
+                li.nav-item
+                a.nav-link(href='' data-target='#edit' data-toggle='tab') Edit
+            .tab-content.py-4
+                #profile.tab-pane.active
+                h5.mb-3 User Profile
+                .row
+                    .col-md-6
+                    h6 About
+                    p
+                        | Web Designer, UI/UX Engineer
+                    h6 Hobbies
+                    p
+                        | Indie music, skiing and hiking. I love the great outdoors.
+                    .col-md-6
+                    h6 Recent badges
+                    a.badge.badge-dark.badge-pill(href='#') html5
+                    a.badge.badge-dark.badge-pill(href='#') react
+                    a.badge.badge-dark.badge-pill(href='#') codeply
+                    a.badge.badge-dark.badge-pill(href='#') angularjs
+                    a.badge.badge-dark.badge-pill(href='#') css3
+                    a.badge.badge-dark.badge-pill(href='#') jquery
+                    a.badge.badge-dark.badge-pill(href='#') bootstrap
+                    a.badge.badge-dark.badge-pill(href='#') responsive-design
+                    hr
+                    span.badge.badge-primary
+                        i.fa.fa-user
+                        |  900 Followers
+                    span.badge.badge-success
+                        i.fa.fa-cog
+                        |  43 Forks
+                    span.badge.badge-danger
+                        i.fa.fa-eye
+                        |  245 Views
+                    .col-md-12
+                    h5.mt-2
+                        span.fa.fa-clock-o.ion-clock.float-right
+                        |  Recent Activity
+                    table.table.table-sm.table-hover.table-striped
+                        tbody
+                        tr
+                            td
+                            strong Abby
+                            |  joined ACME Project Team in 
+                            strong &grave;Collaboration&grave;
+                        tr
+                            td
+                            strong Gary
+                            |  deleted My Board1 in 
+                            strong &grave;Discussions&grave;
+                        tr
+                            td
+                            strong Kensington
+                            |  deleted MyBoard3 in 
+                            strong &grave;Discussions&grave;
+                        tr
+                            td
+                            strong John
+                            |  deleted My Board1 in 
+                            strong &grave;Discussions&grave;
+                        tr
+                            td
+                            strong Skell
+                            |  deleted his post Look at Why this is.. in 
+                            strong &grave;Discussions&grave;
+                // /row
+                #messages.tab-pane
+                .alert.alert-info.alert-dismissable
+                    a.panel-close.close(data-dismiss='alert') &times;
+                    |  This is an 
+                    strong .alert
+                    | . Use this to show important messages to the user.
+                table.table.table-hover.table-striped
+                    tbody
+                    tr
+                        td
+                        span.float-right.font-weight-bold 3 hrs ago
+                        |  Here is your a link to the latest summary report from the..
+                    tr
+                        td
+                        span.float-right.font-weight-bold Yesterday
+                        |  There has been a request on your account since that was..
+                    tr
+                        td
+                        span.float-right.font-weight-bold 9/10
+                        |  Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus.
+                    tr
+                        td
+                        span.float-right.font-weight-bold 9/4
+                        |  Vestibulum tincidunt ullamcorper eros eget luctus.
+                    tr
+                        td
+                        span.float-right.font-weight-bold 9/4
+                        |  Maxamillion ais the fix for tibulum tincidunt ullamcorper eros.
+                #edit.tab-pane
+                form(role='form')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label First name
+                    .col-lg-9
+                        input.form-control(type='text' value='Jane')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Last name
+                    .col-lg-9
+                        input.form-control(type='text' value='Bishop')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Email
+                    .col-lg-9
+                        input.form-control(type='email' value='email@gmail.com')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Company
+                    .col-lg-9
+                        input.form-control(type='text' value='')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Website
+                    .col-lg-9
+                        input.form-control(type='url' value='')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Address
+                    .col-lg-9
+                        input.form-control(type='text' value='' placeholder='Street')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label
+                    .col-lg-6
+                        input.form-control(type='text' value='' placeholder='City')
+                    .col-lg-3
+                        input.form-control(type='text' value='' placeholder='State')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Time Zone
+                    .col-lg-9
+                        select#user_time_zone.form-control(size='0')
+                        option(value='Hawaii') (GMT-10:00) Hawaii
+                        option(value='Alaska') (GMT-09:00) Alaska
+                        option(value='Pacific Time (US & Canada)') (GMT-08:00) Pacific Time (US &amp; Canada)
+                        option(value='Arizona') (GMT-07:00) Arizona
+                        option(value='Mountain Time (US & Canada)') (GMT-07:00) Mountain Time (US &amp; Canada)
+                        option(value='Central Time (US & Canada)' selected='selected') (GMT-06:00) Central Time (US &amp; Canada)
+                        option(value='Eastern Time (US & Canada)') (GMT-05:00) Eastern Time (US &amp; Canada)
+                        option(value='Indiana (East)') (GMT-05:00) Indiana (East)
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Username
+                    .col-lg-9
+                        input.form-control(type='text' value='janeuser')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Password
+                    .col-lg-9
+                        input.form-control(type='password' value='11111122333')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label Confirm password
+                    .col-lg-9
+                        input.form-control(type='password' value='11111122333')
+                    .form-group.row
+                    label.col-lg-3.col-form-label.form-control-label
+                    .col-lg-9
+                        input.btn.btn-secondary(type='reset' value='Cancel')
+                        input.btn.btn-primary(type='button' value='Save Changes')
+            .col-lg-4.order-lg-1.text-center
+            img.mx-auto.img-fluid.img-circle.d-block(src='//placehold.it/150' alt='avatar')
+            h6.mt-2 Upload a different photo
+            label.custom-file
+                input#file.custom-file-input(type='file')
+                span.custom-file-control Choose file
+
