@@ -1,123 +1,113 @@
-
 .jumbotron {
     width: 100%;
     height: 340px;
     text-align: center;
-    background: linear-gradient(#0e130f,#40853b);
+    background: linear-gradient(#0e130f, #40853b);
     margin: auto 0;
     margin-bottom: 10px;
     font-family: 'Courgette', cursive;
     box-shadow: 3px 3px 3px 4px #1b1b17;
-    
-    }
-  
-    nav {
-      background-color: #1b1b17;
-      box-shadow: 0 0 3px 4px #1b1b17;
-      font-family: 'Courgette', cursive;
-      }
-  
-    a {
-      color: #c0c0b2;
-      font-family: 'Courgette', cursive;
-    }
-  
-    .btn.btn-primary#signup-modal {
-      background-color: #3a3a2d;
-      color: #c0c0b2;
-      box-shadow: 0 0 2px 1px #24572c;
-      margin-top: 40px;
-    }
-    
-    a:hover {
-      color: #3f8a4a;
-    }
-    
-  
-  h1 {
+}
+
+nav {
+    background-color: #1b1b17;
+    box-shadow: 0 0 3px 4px #1b1b17;
+    font-family: 'Courgette', cursive;
+}
+
+a {
+    color: #fff;
+    font-family: 'Courgette', cursive;
+}
+
+.btn.btn-primary#signup-modal {
+    background-color: #3a3a2d;
+    color: #c0c0b2;
+    box-shadow: 0 0 2px 1px #24572c;
+    margin-top: 40px;
+}
+
+a:hover {
+    color: #3f8a4a;
+}
+
+h1 {
     font-family: 'Monoton', cursive;
-  }
-  
-  #high {
+}
+
+#high {
     font-family: 'Shrikhand', cursive;
     font-size: 65px;
     color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  }
-  
-  #flow {
+}
+
+#flow {
     font-family: 'Monoton', cursive;
     font-size: 50px;
     color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  }
-  
-  img {
-  
-  width: 100%;
-  height: 350px;
-  }
-  
-  body {
-      background-image: url('../images/green10.jpg');
-      no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+}
+
+img {
+    width: 100%;
+    height: 350px;
+}
+
+body {
+    background-image: url('../images/green10.jpg');
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@include media-breakpoint-up(sm) {
+    .carousel {
+        box-shadow: 0 0 3px 3px #1b1b17;
+        ;
+        color: #1b1b17;
+        font-size: 20px;
+        font-family: 'Courgette', cursive;
     }
-  
-  
-  @include media-breakpoint-up(sm) {.carousel {
-    box-shadow: 0 0 3px 3px #1b1b17;;
-    color:#1b1b17;
-    font-size: 20px;
-    font-family: 'Courgette', cursive;
-  }}
-  
-  .carousel-caption, h5 {
+}
+
+.carousel-caption,
+h5 {
     color: #080e09;
     text-shadow: -1px 0 #a7a3a3, 0 1px #a7a3a3, 1px 0 #a7a3a3, 0 -1px #a7a3a3;
     font-size: 30px;
     font-weight: bold;
     font-family: 'Courgette', cursive;
-  
-  
-  }
-  
-  .lead {
+}
+
+.lead {
     color: #ffffff;
     font-family: 'Playfair Display', serif;
     font-size: 12pt;
     margin-bottom: 0px;
-  }
+}
 
-  #modal1 {
-      width: 100%;
-      margin: 0 auto;
-      color: #ffffff;
-     
-      
-    
+#modal1 {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
 
-  }
-
-  .modal-content {
+.modal-content {
     width: 35%;
     display: inline-flex;
     flex-wrap: nowrap;
     background-color: #40853b;
     color: #ffffff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    
-    
-    
-  }
+}
 
-  .form-group {
-      text-align: left;
-      overflow-y: initial;
-  }
+.form-group {
+    text-align: left;
+    overflow-y: initial;
+}
 
 h5 {
     color: #ffffff;
@@ -135,6 +125,4 @@ h5 {
     background-color: #3f4e3a;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: 1px solid black;
-    
 }
-  
