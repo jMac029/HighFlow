@@ -9,7 +9,7 @@ router.get("/api/growers", (req, res) => {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Product
-    db.grower.findAll({
+    db.Grower.findAll({
         //include: [db.Product]
     }).then(function(dbGrower) {
         res.json(dbGrower);
@@ -20,7 +20,7 @@ router.get("/api/growers/:id", (req, res) => {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Product
-    db.grower.findOne({
+    db.Grower.findOne({
         where: {
             id: req.params.id
         }
@@ -52,7 +52,7 @@ router.post('/api/growers', (req, res) => {
 })
 
 router.delete("/api/growers/:id", (req, res) => {
-    db.grower.destroy({
+    db.Grower.destroy({
         where: {
             id: req.params.id
         }

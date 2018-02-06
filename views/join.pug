@@ -56,24 +56,24 @@ block contents
                         input#grower-cycle.form-control(type='text' name='grower_cycle')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                         button#growerBttn.btn.btn-primary(type='submit') Submit
-                form.dispenser-form(action='/join', method='post')
+                form.dispenser-form(action='/api/dispensers', method='post')
                     .form-group
                         label.form-control-label(for='dispenser-name') Name:
                         input#dispenser-name.form-control(type='text' name='username')
                         label.form-control-label(for='dispenser-license') License ID:
-                        input#dispenser-license.form-control(type='text')
+                        input#dispenser-license.form-control(type='text' name='dispenser_license')
                         label.form-control-label(for='dispenser-city') City:
-                        input#dispenser-city.form-control(type='text' )
+                        input#dispenser-city.form-control(type='text' name='dispenser_city')
                         label.form-control-label(for='dispenser-state') State:
-                        input#dispenser-state.form-control(type='text' placeholder='CA')
+                        input#dispenser-state.form-control(type='state' placeholder='CA' name='dispenser_state')
                         label.form-control-label(for='dispenser-email') Email:
-                        input#dispenser-email.form-control(type='email' placeholder='highflow@example.com')
+                        input#dispenser-email.form-control(type='email' placeholder='highflow@example.com' name='dispenser_email')
                         label.form-control-label(for='dispenser-bio') Bio:
-                        input#dispenser-bio.form-control(type='text')           
+                        input#dispenser-bio.form-control(type='text' name='dispenser_bio')           
                         label.form-control-label(for='dispenser-strains') Strains Wanted:
-                        input#dispenser-strains-wanted.form-control(type='text')
+                        input#dispenser-strains-wanted.form-control(type='text' name='dispenser_strains')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button.btn.btn-primary(type='submit') Submit
+                        button#dispenserBttn.btn.btn-primary(type='submit') Submit
             
 
         //-#modal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='joinForGrower' aria-hidden='true')
