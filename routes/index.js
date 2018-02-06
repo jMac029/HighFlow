@@ -36,7 +36,7 @@ router.get("/growers", (req, res) => {
             //include: [db.Product]
         }).then(function(dbGrower) {
             //res.json(dbGrower);
-            res.render('growers', { dbGrower })
+            res.render('growers', { name, dbGrower })
         });
     } else {
         res.redirect('/join');
@@ -50,7 +50,7 @@ router.get("/dispensaries", (req, res) => {
         db.Dispenser.findAll({
             //include: [db.Product]
         }).then((dbDispenser) => {
-            res.render('dispensaries', { dbDispenser })
+            res.render('dispensaries', { name, dbDispenser })
         })
     } else {
         res.redirect('/join')
@@ -59,12 +59,23 @@ router.get("/dispensaries", (req, res) => {
 
 // about route loads about page
 router.get("/about", (req, res) => {
-    res.render('about', { basedir: __dirname });
+    const name = req.cookies.username
+    if (name) {
+        res.render('about', { name })
+            //res.render('main', { name })
+    }
 });
 
 // join route loads join page
 router.get("/join", (req, res) => {
-    res.render('join', { basedir: __dirname })
+    const name = req.cookies.username
+    if (name) {
+        res.render('main', { name })
+            //res.render('main', { name })
+    } else {
+        res.render('join')
+    }
+
 })
 
 // join post route for collecting the username to save in the cookie
@@ -91,8 +102,8 @@ router.post('/join', (req, res) => {
 })
 
 // login route loads login
-router.get("/login", (req, res) => {
-    res.render('login', { basedir: __dirname })
-})
+// router.get("/login", (req, res) => {
+//     res.render('login', { basedir: __dirname })
+// })
 
 module.exports = router
