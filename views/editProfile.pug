@@ -1,0 +1,65 @@
+extends layouts
+block css
+  link(rel='stylesheet' href='/assets/css/profile.css')
+
+block contents
+  .container
+    .row.m-y-2
+      .col-lg-4.text-lg-center
+        h2 Edit Profile
+      .col-lg-8
+        
+      .col-lg-8.push-lg-4.personal-info
+        form(role='form')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Company
+            .col-lg-9
+              input.form-control(type='text' value='')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Phone Number
+            .col-lg-9
+              input.form-control(type='url' value='')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Email
+            .col-lg-9
+              input.form-control(type='email' value='email@gmail.com')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Website
+            .col-lg-9
+              input.form-control(type='url' value='')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Address
+            .col-lg-9
+              input.form-control(type='text' value='' placeholder='Street')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label
+            .col-lg-6
+              input.form-control(type='text' value='' placeholder='City')
+            .col-lg-3
+              input.form-control(type='text' value='' placeholder='State')
+          
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Bio
+            .col-lg-9
+              input.form-control(type='text' value='' style='height:200;width:100%;margin-bottom:10px')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label Strains
+            .col-lg-9
+              input.form-control(type='text' value='' style='height:200;width:100%;margin-bottom: 10px')
+          .form-group.row
+            label.col-lg-3.col-form-label.form-control-label
+            .col-lg-9
+              input.btn.btn-secondary(type='reset' value='Cancel')
+              input.btn.btn-primary(type='button' value='Save Changes')
+      .col-lg-4.pull-lg-8.text-xs-center
+        img.m-x-auto.img-fluid.img-circle(src='//placehold.it/150' alt='avatar')
+        h6.m-t-2 Upload a different photo
+        label.custom-file
+          input#file.custom-file-input(type='file')
+          span.custom-file-control Choose file
+
+
+
+
+
+
