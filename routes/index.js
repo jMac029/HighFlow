@@ -31,7 +31,13 @@ router.get("/main", (req, res) => {
 router.get("/growers", (req, res) => {
     const name = req.cookies.username;
     if (name) {
-        res.render('growers', { basedir: __dirname })
+        // res.render('growers', { basedir: __dirname })
+        db.Grower.findAll({
+            //include: [db.Product]
+        }).then(function(dbGrower) {
+            //res.json(dbGrower);
+            res.render('growers', { dbGrower })
+        });
     } else {
         res.redirect('/join');
     }
@@ -41,11 +47,15 @@ router.get("/growers", (req, res) => {
 router.get("/dispensaries", (req, res) => {
     const name = req.cookies.username;
     if (name) {
-        res.render('dispensaries', { basedir: __dirname });
+        db.Dispenser.findAll({
+            //include: [db.Product]
+        }).then((dbDispenser) => {
+            res.render('dispensaries', { dbDispenser })
+        })
     } else {
-        res.redirect('/join');
+        res.redirect('/join')
     }
-});
+})
 
 // about route loads about page
 router.get("/about", (req, res) => {
