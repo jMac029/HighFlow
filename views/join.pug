@@ -26,37 +26,37 @@ block contents
                         option Dispenser
                     button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                     button#userTypeBttn.btn.btn-primary(type='submit') Continue
-                form.grower-form
+                form.grower-form(action='/api/growers', method='post')
                     .form-group
                         label.form-control-label(for='grower-name') Name:
-                        input#grower-name.form-control(type='text')
+                        input#grower-name.form-control(type='text' name='username')
                         label.form-control-label(for='grower-license') License ID:
-                        input#grower-license.form-control(type='text')
+                        input#grower-license.form-control(type='text' name='grower_license')
                         label.form-control-label(for='grower-city') City:
-                        input#grower-city.form-control(type='text')
+                        input#grower-city.form-control(type='text' name='grower_city')
                         label.form-control-label(for='grower-state') State:
-                        input#grower-state.form-control(type='text' placeholder='CA')
+                        input#grower-state.form-control(type='state' placeholder='CA' name='grower_state')
                         label.form-control-label(for='grower-email') Email:
-                        input#grower-email.form-control(type='email' placeholder='highflow@example.com')
+                        input#grower-email.form-control(type='email' placeholder='highflow@example.com' name='grower_email')
                         label.form-control-label(for='grower-bio') Bio:
-                        input#grower-bio.form-control(type='text')
+                        input#grower-bio.form-control(type='text' name='grower_bio')
                     .form-group
                         label(for='grower-indoor') Indoor:
-                        select#grower-indoor.form-control
+                        select#grower_indoor.form-control
                             option Select              
                             option Yes
                             option No
                     .form-group        
                         label.form-control-label(for='grower-strains') Strains:
-                        input#grower-strains.form-control(type='text')
+                        input#grower-strains.form-control(type='text' name='grower_strains')
                         label.form-control-label(for='grower-cycle') Cycle:
-                        input#grower-cycle.form-control(type='text')
+                        input#grower-cycle.form-control(type='text' name='grower_cycle')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button#growerBttn.btn.btn-primary(type='button') Submit
-                form.dispenser-form
+                        button#growerBttn.btn.btn-primary(type='submit') Submit
+                form.dispenser-form(action='/join', method='post')
                     .form-group
                         label.form-control-label(for='dispenser-name') Name:
-                        input#dispenser-name.form-control(type='text')
+                        input#dispenser-name.form-control(type='text' name='username')
                         label.form-control-label(for='dispenser-license') License ID:
                         input#dispenser-license.form-control(type='text')
                         label.form-control-label(for='dispenser-city') City:
@@ -70,7 +70,7 @@ block contents
                         label.form-control-label(for='dispenser-strains') Strains Wanted:
                         input#dispenser-strains-wanted.form-control(type='text')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button.btn.btn-primary(type='button') Submit
+                        button.btn.btn-primary(type='submit') Submit
             
 
         //-#modal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='joinForGrower' aria-hidden='true')
@@ -110,6 +110,7 @@ block contents
 
         //- Javascript for Modals
         script(src='/assets/js/join.js')
+        //- script(src='/assets/js/grower.js')
         
 
   

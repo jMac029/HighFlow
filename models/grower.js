@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let grower = sequelize.define("Grower", {
+    let Grower = sequelize.define("Grower", {
         // Giving the Grower model a name of type STRING
         grower_name: {
             type: DataTypes.STRING,
@@ -40,32 +40,32 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
         grow_method: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
-        indoor: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
+        // indoor: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
         strains: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
         cycle: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len: [1, 140]
+                len: [0, 140]
             }
         }
     });
@@ -78,5 +78,5 @@ module.exports = function(sequelize, DataTypes) {
     //     });
     // };
 
-    return grower;
+    return Grower;
 };
