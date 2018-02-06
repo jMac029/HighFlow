@@ -1,6 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
     let Grower = sequelize.define("Grower", {
         // Giving the Grower model a name of type STRING
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+            }
+        },
         grower_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -26,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2]
+                len: [1, 13]
             }
         },
         email: {
@@ -36,24 +43,20 @@ module.exports = function(sequelize, DataTypes) {
                 isEmail: true
             }
         },
-        bio: {
+        about: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 len: [0, 280]
             }
         },
-        grow_method: {
+        system: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 len: [0, 280]
             }
         },
-        // indoor: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: true,
-        // },
         strains: {
             type: DataTypes.TEXT,
             allowNull: true,
@@ -62,6 +65,20 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         cycle: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
+            }
+        },
+        webpage: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
+            }
+        },
+        image: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
