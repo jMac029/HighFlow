@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let dispenser = sequelize.define("Dispenser", {
+    let Dispenser = sequelize.define("Dispenser", {
         // Giving the Dispenser model a name of type STRING
         dispenser_name: {
             type: DataTypes.STRING,
@@ -40,14 +40,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
         strains_wanted: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         }
     });
@@ -60,5 +60,5 @@ module.exports = function(sequelize, DataTypes) {
     //     });
     // };
 
-    return dispenser;
+    return Dispenser;
 };
