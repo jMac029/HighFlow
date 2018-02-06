@@ -15,6 +15,7 @@ block contents
         .modal-content
             .modal-header
             h5#userType.modal-title Sign-Up!
+            label#instruction(for='instruction')
                 span(aria-hidden='true') 
             .modal-body
                 form.typeuser
@@ -28,80 +29,153 @@ block contents
                     button#userTypeBttn.btn.btn-primary(type='submit') Continue
                 form.grower-form(action='/api/growers', method='post')
                     .form-group
-                        label.form-control-label(for='grower-name') Name:
-                        input#grower-name.form-control(type='text' name='username')
-                        label.form-control-label(for='grower-license') License ID:
-                        input#grower-license.form-control(type='text' name='grower_license')
+                        label.form-control-label(for='grower-username') Username:
+                        input#grower-name.form-control(type='text' placeholder='Ex) jsmith ** No Space ** ' name='username')
+                        label.form-control-label(for='grower-name') Business Name:
+                        input#grower-name.form-control(type='text' placeholder='Ex) Leafly' name='businessname')
+                        label.form-control-label(for='grower_license') License ID:
+                        input#grower-license.form-control(type='text' placeholder='Ex) M00-00-0000000-TEMP' name='grower_license')
                         label.form-control-label(for='grower-city') City:
-                        input#grower-city.form-control(type='text' name='grower_city')
-                        label.form-control-label(for='grower-state') State:
-                        input#grower-state.form-control(type='state' placeholder='CA' name='grower_state')
+                        input#grower-city.form-control(type='text' placeholder='Ex) Los Angeles' name='grower_city')
+                        .form-group
+                        label(for='grower-state') State:
+                        select#grower-state.form-control(type='state' name='grower_state')
+                            option Select
+                            option Alabama
+                            option Arizona
+                            option Arkansas
+                            option California
+                            option Colorado
+                            option Connecticut
+                            option Delaware
+                            option Florida
+                            option Georgia
+                            option Hawaii
+                            option Idaho
+                            option Illinois
+                            option Indiana
+                            option Lowa
+                            option Kentucky
+                            option Louisiana
+                            option Maine
+                            option Maryland
+                            option Massachusetts
+                            option Michigan
+                            option Minnesota
+                            option Michigan
+                            option Missouri
+                            option Montana
+                            option Nevada
+                            option New Hampshire
+                            option New Jersey
+                            option New Mexico
+                            option New York
+                            option North Dekota
+                            option Ohio
+                            option Oregon
+                            option Rhode Island
+                            option Tennessee
+                            option Texas
+                            option Utah
+                            option Washington
+                            option West Virginia
+                            option Wisconsin
+
                         label.form-control-label(for='grower-email') Email:
-                        input#grower-email.form-control(type='email' placeholder='highflow@example.com' name='grower_email')
-                        label.form-control-label(for='grower-bio') Bio:
-                        input#grower-bio.form-control(type='text' name='grower_bio')
+                        input#grower-email.form-control(type='email' placeholder='Ex) highflow@example.com' name='grower_email')
                     .form-group
-                        label(for='grower-indoor') Indoor:
-                        select#grower_indoor.form-control
-                            option Select              
-                            option Yes
-                            option No
+                        label.form-control-label(for='grower-system') What growing system do you have?
+                        .form-check
+                            input#system-option.form-check-input(type='radio' name='grower_system' value='option1' checked='')
+                            label#system-option.form-check-label(for='hydroponic')
+                                | Hydroponic or Closed System
+                        .form-check
+                            input#system-option.form-check-input(type='radio' name='grower_system' value='option2')
+                            label#system-option.form-check-label(for='greenhouse')
+                                | Greenhouse (Indoor Grow Room)
+                        .form-check
+                            input#system-option.form-check-input(type='radio' name='grower_system' value='option3')
+                            label#system-option.form-check-label(for='outdoor')
+                                | Outdoor
                     .form-group        
                         label.form-control-label(for='grower-strains') Strains:
-                        input#grower-strains.form-control(type='text' name='grower_strains')
+                        input#grower-strains.form-control(type='text' placeholder='Ex) Sd or Sour Diesel' name='grower_strains')
                         label.form-control-label(for='grower-cycle') Cycle:
-                        input#grower-cycle.form-control(type='text' name='grower_cycle')
+                        input#grower-cycle.form-control(type='text' placeholder='Ex) 3 Months' name='grower_cycle')
+                        label.form-control-label(for='grower-about') About:
+                        input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of you' name='grower_about')  
+                        label.form-control-label(for='grower-web') Web Page:
+                        input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='web')
+                        label.form-control-label(for='grower-img') Profile Image URL:
+                        input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='grower_img')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                         button#growerBttn.btn.btn-primary(type='submit') Submit
                 form.dispenser-form(action='/api/dispensers', method='post')
                     .form-group
-                        label.form-control-label(for='dispenser-name') Name:
-                        input#dispenser-name.form-control(type='text' name='username')
+                        label.form-control-label(for='dispenser-username') Username:
+                        input#grower-name.form-control(type='text' placeholder='* No Space * Ex) jsmith' name='username')
+                        label.form-control-label(for='dispenser-name') Business Name:
+                        input#dispenser-name.form-control(type='text' placeholder='Ex) Leafly' name='businessname')
                         label.form-control-label(for='dispenser-license') License ID:
-                        input#dispenser-license.form-control(type='text' name='dispenser_license')
+                        input#dispenser-license.form-control(type='text' placeholder='Ex) M00-00-0000000-TEMP' name='dispenser_license')
                         label.form-control-label(for='dispenser-city') City:
-                        input#dispenser-city.form-control(type='text' name='dispenser_city')
-                        label.form-control-label(for='dispenser-state') State:
-                        input#dispenser-state.form-control(type='state' placeholder='CA' name='dispenser_state')
+                        input#dispenser-city.form-control(type='text' placeholder='Ex) Sacramento' name='dispenser_city')
+                        .form-group
+                        label(for='dispenser-state') State:
+                        select#grower-state.form-control(type='state' name='dispenser_state')
+                            option Select
+                            option Alabama
+                            option Arizona
+                            option Arkansas
+                            option California
+                            option Colorado
+                            option Connecticut
+                            option Delaware
+                            option Florida
+                            option Georgia
+                            option Hawaii
+                            option Idaho
+                            option Illinois
+                            option Indiana
+                            option Lowa
+                            option Kentucky
+                            option Louisiana
+                            option Maine
+                            option Maryland
+                            option Massachusetts
+                            option Michigan
+                            option Minnesota
+                            option Michigan
+                            option Missouri
+                            option Montana
+                            option Nevada
+                            option New Hampshire
+                            option New Jersey
+                            option New Mexico
+                            option New York
+                            option North Dekota
+                            option Ohio
+                            option Oregon
+                            option Rhode Island
+                            option Tennessee
+                            option Texas
+                            option Utah
+                            option Washington
+                            option West Virginia
+                            option Wisconsin
+
                         label.form-control-label(for='dispenser-email') Email:
-                        input#dispenser-email.form-control(type='email' placeholder='highflow@example.com' name='dispenser_email')
-                        label.form-control-label(for='dispenser-bio') Bio:
-                        input#dispenser-bio.form-control(type='text' name='dispenser_bio')           
+                        input#dispenser-email.form-control(type='email' placeholder='Ex) highflow@example.com' name='dispenser_email')
+                        label.form-control-label(for='dispenser-about') About:
+                        input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of you' name='dispenser_about')           
                         label.form-control-label(for='dispenser-strains') Strains Wanted:
-                        input#dispenser-strains-wanted.form-control(type='text' name='dispenser_strains')
+                        input#dispenser-strains-wanted.form-control(type='text' placeholder='Ex) Cp or Cherry Pie' name='dispenser_strains')
+                        label.form-control-label(for='dispenser-web') Web Page:
+                        input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='dispenser_web')
+                        label.form-control-label(for='dispenser-img') Profile Image URL:
+                        input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='dispenser_img')
                         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                         button#dispenserBttn.btn.btn-primary(type='submit') Submit
-            
-
-        //-#modal2.modal.fade(tabindex='-1' role='dialog' aria-labelledby='joinForGrower' aria-hidden='true')
-        //- .modal-dialog(role='document')
-        //-   .modal-content
-        //-     .modal-header
-        //-       h5#growerForm.modal-title Sign-Up!
-        //-       button.close(type='button' data-dismiss='modal' aria-label='Close')
-        //-         span(aria-hidden='true') &times;
-        //-     .modal-body
-                
-            
-
-        //-   //#modal3.modal.fade(tabindex='-1' role='dialog' aria-labelledby='joinForDispenser' aria-hidden='true')
-        //-   .modal-dialog(role='document')
-        //-     .modal-content
-        //-       .modal-header
-        //-         h5#dispenserForm.modal-title Sign-Up!
-        //-         button.close(type='button' data-dismiss='modal' aria-label='Close')
-        //-           span(aria-hidden='true') &times;
-        //-       .modal-body
-                
-
-        //-       .modal-footer
-
-    //- block contents
-
-    //-   form.form.text-center#high(action='/join', method='post')
-    //-     label.text-center Please enter your name:
-    //-       input.namecard-name(type='text', name='username' placeholder='name')
-    //-     button.btn.btn-secondary.btn-lg.submit(type='submit') Submit
 
     block scripts
         script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
