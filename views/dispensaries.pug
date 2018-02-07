@@ -7,15 +7,15 @@ block contents
     p.display-4 Local dispensaries closest to you:
     p.lead
       each dispenser in dbDispenser
-        .card
+        .card(id = dispenser.id)
           h5.card-header= dispenser.dispenser_name
           .card-body
             img.rounded.float-right(src=dispenser.image alt='dis1')
             h5.card-title= dispenser.about
             p.card-text= "License: " + dispenser.license
             p.card-text= "Strains Wanted: " + dispenser.strains_wanted
-            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
-            #myModal.modal.fade(role='dialog')
+            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(dispenser.id)) Contact
+            .modal.fade(role='dialog')(id = "myModal-"+(dispenser.id))
               .modal-dialog
                 .modal-content
                   .modal-header
