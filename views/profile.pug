@@ -1,4 +1,4 @@
-block layouts
+extends layouts.pug
 block css
     link(rel='stylesheet' href='/assets/css/profile.css')
 block contents
@@ -14,160 +14,124 @@ block contents
                 a.nav-link(href='' data-target='#edit' data-toggle='tab') Edit
             .tab-content.py-4
                 #profile.tab-pane.active
-                h5.mb-3 User Profile
-                .row
-                    .col-md-6
-                    h6 About
-                    p
-                        | Web Designer, UI/UX Engineer
-                    h6 Hobbies
-                    p
-                        | Indie music, skiing and hiking. I love the great outdoors.
-                    .col-md-6
-                    h6 Recent badges
-                    a.badge.badge-dark.badge-pill(href='#') html5
-                    a.badge.badge-dark.badge-pill(href='#') react
-                    a.badge.badge-dark.badge-pill(href='#') codeply
-                    a.badge.badge-dark.badge-pill(href='#') angularjs
-                    a.badge.badge-dark.badge-pill(href='#') css3
-                    a.badge.badge-dark.badge-pill(href='#') jquery
-                    a.badge.badge-dark.badge-pill(href='#') bootstrap
-                    a.badge.badge-dark.badge-pill(href='#') responsive-design
-                    hr
-                    span.badge.badge-primary
-                        i.fa.fa-user
-                        |  900 Followers
-                    span.badge.badge-success
-                        i.fa.fa-cog
-                        |  43 Forks
-                    span.badge.badge-danger
-                        i.fa.fa-eye
-                        |  245 Views
-                    .col-md-12
-                    h5.mt-2
-                        span.fa.fa-clock-o.ion-clock.float-right
-                        |  Recent Activity
-                    table.table.table-sm.table-hover.table-striped
-                        tbody
-                        tr
-                            td
-                            strong Abby
-                            |  joined ACME Project Team in 
-                            strong &grave;Collaboration&grave;
-                        tr
-                            td
-                            strong Gary
-                            |  deleted My Board1 in 
-                            strong &grave;Discussions&grave;
-                        tr
-                            td
-                            strong Kensington
-                            |  deleted MyBoard3 in 
-                            strong &grave;Discussions&grave;
-                        tr
-                            td
-                            strong John
-                            |  deleted My Board1 in 
-                            strong &grave;Discussions&grave;
-                        tr
-                            td
-                            strong Skell
-                            |  deleted his post Look at Why this is.. in 
-                            strong &grave;Discussions&grave;
-                // /row
-                #messages.tab-pane
-                .alert.alert-info.alert-dismissable
-                    a.panel-close.close(data-dismiss='alert') &times;
-                    |  This is an 
-                    strong .alert
-                    | . Use this to show important messages to the user.
-                table.table.table-hover.table-striped
-                    tbody
-                    tr
-                        td
-                        span.float-right.font-weight-bold 3 hrs ago
-                        |  Here is your a link to the latest summary report from the..
-                    tr
-                        td
-                        span.float-right.font-weight-bold Yesterday
-                        |  There has been a request on your account since that was..
-                    tr
-                        td
-                        span.float-right.font-weight-bold 9/10
-                        |  Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus.
-                    tr
-                        td
-                        span.float-right.font-weight-bold 9/4
-                        |  Vestibulum tincidunt ullamcorper eros eget luctus.
-                    tr
-                        td
-                        span.float-right.font-weight-bold 9/4
-                        |  Maxamillion ais the fix for tibulum tincidunt ullamcorper eros.
-                #edit.tab-pane
-                form(role='form')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label First name
-                    .col-lg-9
-                        input.form-control(type='text' value='Jane')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Last name
-                    .col-lg-9
-                        input.form-control(type='text' value='Bishop')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Email
-                    .col-lg-9
-                        input.form-control(type='email' value='email@gmail.com')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Company
-                    .col-lg-9
-                        input.form-control(type='text' value='')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Website
-                    .col-lg-9
-                        input.form-control(type='url' value='')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Address
-                    .col-lg-9
-                        input.form-control(type='text' value='' placeholder='Street')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label
-                    .col-lg-6
-                        input.form-control(type='text' value='' placeholder='City')
-                    .col-lg-3
-                        input.form-control(type='text' value='' placeholder='State')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Time Zone
-                    .col-lg-9
-                        select#user_time_zone.form-control(size='0')
-                        option(value='Hawaii') (GMT-10:00) Hawaii
-                        option(value='Alaska') (GMT-09:00) Alaska
-                        option(value='Pacific Time (US & Canada)') (GMT-08:00) Pacific Time (US &amp; Canada)
-                        option(value='Arizona') (GMT-07:00) Arizona
-                        option(value='Mountain Time (US & Canada)') (GMT-07:00) Mountain Time (US &amp; Canada)
-                        option(value='Central Time (US & Canada)' selected='selected') (GMT-06:00) Central Time (US &amp; Canada)
-                        option(value='Eastern Time (US & Canada)') (GMT-05:00) Eastern Time (US &amp; Canada)
-                        option(value='Indiana (East)') (GMT-05:00) Indiana (East)
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Username
-                    .col-lg-9
-                        input.form-control(type='text' value='janeuser')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Password
-                    .col-lg-9
-                        input.form-control(type='password' value='11111122333')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label Confirm password
-                    .col-lg-9
-                        input.form-control(type='password' value='11111122333')
-                    .form-group.row
-                    label.col-lg-3.col-form-label.form-control-label
-                    .col-lg-9
-                        input.btn.btn-secondary(type='reset' value='Cancel')
-                        input.btn.btn-primary(type='button' value='Save Changes')
-            .col-lg-4.order-lg-1.text-center
-            img.mx-auto.img-fluid.img-circle.d-block(src='//placehold.it/150' alt='avatar')
-            h6.mt-2 Upload a different photo
-            label.custom-file
-                input#file.custom-file-input(type='file')
-                span.custom-file-control Choose file
+                    .row
+                        .col-md-6
+                            each grower in dbGrower
+                                h4 Username
+                                p= grower.username
+                                h4 Business Name
+                                p= grower.grower_name
+                                h4 License#
+                                p= grower.license
+                                h4 City
+                                p= grower.city
+                                h4 State
+                                p= grower.state
+                                h4 Email
+                                p= grower.email
+                                h4 Grow System
+                                p= grower.system
+                                h4 Strains
+                                p= grower.strains
+                                h4 Grow Cycle
+                                p= grower.cycle
+                                h4 About
+                                p= grower.about
+                                h4 Webpage
+                                p= grower.web
+                                h4 Profile Image
+                                img.rounded.float-left(src=grower.image alt='grower1')
+                                p= grower.image
+            #modal1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
+                .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                    h5#userType.modal-title Sign-Up!
+                    label#instruction(for='instruction')
+                        span(aria-hidden='true') 
+                    .modal-body
+                        form.grower-form(action='/api/growers', method='post')
+                            .form-group
+                                label.form-control-label(for='grower-username') Username:
+                                input#grower-name.form-control(type='text' placeholder='Ex) jsmith ** No Space ** ' name='username')
+                                label.form-control-label(for='grower-name') Business Name:
+                                input#grower-name.form-control(type='text' placeholder='Ex) Leafly' name='business_name')
+                                label.form-control-label(for='grower_license') License ID:
+                                input#grower-license.form-control(type='text' placeholder='Ex) M00-00-0000000-TEMP' name='grower_license')
+                                label.form-control-label(for='grower-city') City:
+                                input#grower-city.form-control(type='text' placeholder='Ex) Los Angeles' name='grower_city')
+                                .form-group
+                                label(for='grower-state') State:
+                                select#grower-state.form-control(type='state' name='grower_state')
+                                    option Select
+                                    option Alabama
+                                    option Arizona
+                                    option Arkansas
+                                    option California
+                                    option Colorado
+                                    option Connecticut
+                                    option Delaware
+                                    option Florida
+                                    option Georgia
+                                    option Hawaii
+                                    option Idaho
+                                    option Illinois
+                                    option Indiana
+                                    option Lowa
+                                    option Kentucky
+                                    option Louisiana
+                                    option Maine
+                                    option Maryland
+                                    option Massachusetts
+                                    option Michigan
+                                    option Minnesota
+                                    option Michigan
+                                    option Missouri
+                                    option Montana
+                                    option Nevada
+                                    option New Hampshire
+                                    option New Jersey
+                                    option New Mexico
+                                    option New York
+                                    option North Dekota
+                                    option Ohio
+                                    option Oregon
+                                    option Rhode Island
+                                    option Tennessee
+                                    option Texas
+                                    option Utah
+                                    option Washington
+                                    option West Virginia
+                                    option Wisconsin
+
+                                label.form-control-label(for='grower-email') Email:
+                                input#grower-email.form-control(type='email' placeholder='Ex) highflow@example.com' name='grower_email')
+                            .form-group
+                                label.form-control-label(for='grower-system') What growing system do you have?
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Hydroponic or Closed System' checked='')
+                                    label#system-option.form-check-label(for='hydroponic')
+                                        | Hydroponic or Closed System
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Greenhouse (Indoor Grow Room)')
+                                    label#system-option.form-check-label(for='greenhouse')
+                                        | Greenhouse (Indoor Grow Room)
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Outdoor')
+                                    label#system-option.form-check-label(for='outdoor')
+                                        | Outdoor
+                            .form-group        
+                                label.form-control-label(for='grower-strains') Strains:
+                                input#grower-strains.form-control(type='text' placeholder='Ex) Sd or Sour Diesel' name='grower_strains')
+                                label.form-control-label(for='grower-cycle') Cycle:
+                                input#grower-cycle.form-control(type='text' placeholder='Ex) 3 Months' name='grower_cycle')
+                                label.form-control-label(for='grower-about') About:
+                                input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of your business.' name='grower_about')  
+                                label.form-control-label(for='grower-web') Web Page:
+                                input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='grower_web')
+                                label.form-control-label(for='grower-img') Profile Image URL:
+                                input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='grower_img')
+                                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                button#growerBttn.btn.btn-primary(type='submit') Submit
+            
 

@@ -12,7 +12,8 @@ block contents
           .card-body
             img.rounded.float-right(src=dispenser.image alt='dis1')
             h5.card-title= dispenser.about
-            p.card-text= dispenser.strains_wanted
+            p.card-text= "License: " + dispenser.license
+            p.card-text= "Strains Wanted: " + dispenser.strains_wanted
             button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
             #myModal.modal.fade(role='dialog')
               .modal-dialog
@@ -20,8 +21,8 @@ block contents
                   .modal-header
                     h4.modal-title= dispenser.dispenser_name
                   .modal-body
-                    a(href=dispenser.webpage )= dispenser.webpage
-                    p= dispenser.city, dispenser.state
+                    a.weblink(href=dispenser.webpage )= dispenser.webpage
+                    p= dispenser.city + ", " + dispenser.state
                     p= dispenser.email
                   .modal-footer
                     button.btn.btn-default(type='button' data-dismiss='modal') Close

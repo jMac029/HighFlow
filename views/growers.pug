@@ -6,15 +6,16 @@ block contents
   .jumbotron.jumbotron-fluid
     p.display-4 Local growers closest to you:
     p.lead
-      each grower in dbGrower
+      for grower in dbGrower
         .card
           h5.card-header= grower.grower_name
             .card-body
               img.rounded.float-right(src=grower.image alt='grower1')
               h5.card-title= grower.about
-              h6= grower.license
-              p.card-text= grower.strains
-              p.card-text= grower.cycle
+              p.card-text= "License: " + grower.license
+              p.card-text= "Strains: " + grower.strains
+              p.card-text= "System: " + grower.system
+              p.card-text= "Grow Cycle: " + grower.cycle
               button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
               #myModal.modal.fade(role='dialog')
                 .modal-dialog
@@ -22,8 +23,8 @@ block contents
                     .modal-header
                       h4.modal-title= grower.grower_name
                     .modal-body
-                      a(href=grower.webpage)= grower.webpage
-                      p= grower.city, grower.state
+                      a.weblink(href=grower.webpage)= grower.webpage
+                      p= grower.city + ", " + grower.state
                       p= grower.email
                     .modal-footer
                       button.btn.btn-default(type='button' data-dismiss='modal') Close
