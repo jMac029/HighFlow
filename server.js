@@ -38,12 +38,12 @@ app.use(profileRoutes)
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL)
-} else {
-    db.sequelize.sync().then(() => {
+// if (process.env.JAWSDB_URL) {
+//     connection = mysql.createConnection(process.env.JAWSDB_URL)
+// } else {
+db.sequelize.sync().then(() => {
         app.listen(PORT, () => {
             console.log("App listening on PORT " + PORT);
         })
     })
-}
+    // }
