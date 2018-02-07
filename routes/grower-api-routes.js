@@ -32,18 +32,23 @@ router.get("/api/growers/:id", (req, res) => {
 
 router.post('/api/growers', (req, res) => {
     res.cookie('username', req.body.username)
+    res.cookie('business_name', req.body.business_name)
     db.Grower.create({
-            grower_name: req.body.username,
+            username: req.body.username,
+            grower_name: req.body.business_name,
             license: req.body.grower_license,
             city: req.body.grower_city,
             state: req.body.grower_state,
             email: req.body.grower_email,
-            bio: req.body.grower_bio,
-            //indoor: req.body.grower.indoor,
+            system: req.body.grower_system,
+            about: req.body.grower_about,
             strains: req.body.grower_strains,
-            cycle: req.body.grower_cycle
+            cycle: req.body.grower_cycle,
+            webpage: req.body.grower_web,
+            image: req.body.grower_img
         }).then((dbGrower) => {
             // res.cookie('username', req.body.username)
+            res.cookie('highflow', JSONCookies(dbGrower))
             res.redirect('/growers')
         })
         .catch((err) => {

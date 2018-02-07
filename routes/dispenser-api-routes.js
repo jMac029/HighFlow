@@ -32,17 +32,19 @@ router.get("/api/dispensers/:id", (req, res) => {
 
 router.post("/api/dispensers", (req, res) => {
     res.cookie('username', req.body.username)
+    res.cookie('business_name', req.body.business_name)
     db.Dispenser.create({
-            dispenser_name: req.body.username,
+            username: req.body.username,
+            dispenser_name: req.body.business_name,
             license: req.body.dispenser_license,
             city: req.body.dispenser_city,
             state: req.body.dispenser_state,
             email: req.body.dispenser_email,
-            bio: req.body.dispenser_bio,
-            //indoor: req.body.grower.indoor,
-            strains_wanted: req.body.dispenser_strains
+            about: req.body.dispenser_about,
+            strains_wanted: req.body.dispenser_strains,
+            webpage: req.body.dispenser_web,
+            image: req.body.dispenser_img
         }).then((dbDispenser) => {
-            // res.cookie('username', req.body.username)
             res.redirect('/dispensaries')
         })
         .catch((err) => {

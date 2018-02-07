@@ -47,14 +47,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [280]
+                len: [0, 280]
             }
         },
         strains_wanted: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [280]
+                len: [0, 280]
             }
         },
         webpage: {
