@@ -10,8 +10,8 @@ block contents
         .card
           h5.card-header= grower.grower_name
             .card-body
-              img.rounded.float-right(src='/assets/images/grower2.jpg' alt='grower1')
-              h5.card-title= grower.bio
+              img.rounded.float-right(src=grower.image alt='grower1')
+              h5.card-title= grower.about
               h6= grower.license
               p.card-text= grower.strains
               p.card-text= grower.cycle
@@ -22,7 +22,7 @@ block contents
                     .modal-header
                       h4.modal-title= grower.grower_name
                     .modal-body
-                      a(href='#') example.com(need to add website)
+                      a(href=grower.webpage)= grower.webpage
                       p= grower.city, grower.state
                       p= grower.email
                     .modal-footer

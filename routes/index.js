@@ -63,6 +63,8 @@ router.get("/about", (req, res) => {
     if (name) {
         res.render('about', { name })
             //res.render('main', { name })
+    } else {
+        res.render('about')
     }
 });
 
