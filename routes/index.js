@@ -113,7 +113,7 @@ router.post('/join', (req, res) => {
                 //res.cookie('username', req.body.username);
         })
         .catch((err) => {
-            res.json(err)
+            res.render('error')
         })
 })
 

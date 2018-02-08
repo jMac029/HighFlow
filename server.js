@@ -35,6 +35,19 @@ app.use(growerRoutes)
 app.use(dispenserRoutes)
 app.use(profileRoutes)
 
+// Error Handling
+app.use((req, res, next) => {
+    const err = new Error('Not Found')
+    err.status = 404
+    next(err)
+})
+
+app.use((err, req, res, next) => {
+    res.locals.error = err
+    res.status(err.status)
+    res.render('error')
+})
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 

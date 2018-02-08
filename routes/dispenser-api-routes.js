@@ -48,7 +48,7 @@ router.post("/api/dispensers", (req, res) => {
             res.redirect('/dispensaries')
         })
         .catch((err) => {
-            res.json(err)
+            res.render('error')
         })
 });
 
