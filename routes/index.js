@@ -46,7 +46,7 @@ router.get("/growers", (req, res) => {
             //include: [db.Product]
         }).then(function(dbGrower) {
             //res.json(dbGrower);
-            console.log(dbGrower)
+            //console.log(dbGrower)
             res.render('growers', { name, business_name, dbGrower })
         });
     } else {

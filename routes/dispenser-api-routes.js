@@ -45,7 +45,7 @@ router.post("/api/dispensers", (req, res) => {
             webpage: req.body.dispenser_web,
             image: req.body.dispenser_img
         }).then((dbDispenser) => {
-            res.redirect('/dispensaries')
+            res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {
             res.render('error')

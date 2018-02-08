@@ -1,4 +1,4 @@
-extends main.pug
+extends layouts.pug
 block css
   link(rel='stylesheet' href='/assets/css/lists.css')
 
@@ -7,22 +7,21 @@ block contents
     p.display-4 Local dispensaries closest to you:
     p.lead
       each dispenser in dbDispenser
-        .card(id = dispenser.id)
+        .card
           h5.card-header= dispenser.dispenser_name
           .card-body
-            img.rounded.float-right(src=dispenser.image alt='dis1')
-            h5.card-title= dispenser.about
-            p.card-text= "License: " + dispenser.license
-            p.card-text= "Strains Wanted: " + dispenser.strains_wanted
-            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(dispenser.id)) Contact
-            .modal.fade(role='dialog')(id = "myModal-"+(dispenser.id))
+            img.rounded.float-right(src='/assets/images/dis4.jpg' alt='dis1')
+            h5.card-title= dispenser.bio
+            p.card-text= dispenser.strains_wanted
+            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
+            #myModal.modal.fade(role='dialog')
               .modal-dialog
                 .modal-content
                   .modal-header
                     h4.modal-title= dispenser.dispenser_name
                   .modal-body
-                    a.weblink(href=dispenser.webpage )= dispenser.webpage
-                    p= dispenser.city + ", " + dispenser.state
+                    a(href='#') www.example.com
+                    p= dispenser.city, dispenser.state
                     p= dispenser.email
                   .modal-footer
                     button.btn.btn-default(type='button' data-dismiss='modal') Close
