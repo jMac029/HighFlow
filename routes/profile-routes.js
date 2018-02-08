@@ -7,19 +7,35 @@ let db = require("../models");
 router.get("/profile/:username", (req, res) => {
     const name = req.cookies.username
     const business_name = req.cookies.business_name
+    const usertype = req.cookies.usertype
     if (name) {
-        db.Grower.findAll({
-            where: {
-                username: req.params.username
-            },
-            limit: 1
-        }).then(function(dbGrower) {
-            //console.log(dbGrower.dataValues)
-            // let growers = dbGrower
-            // console.log(growers)
-            res.render('profile', { name, business_name, dbGrower });
-            //res.json(dbGrower);
-        });
+        if (usertype === grower) {
+            db.Grower.findAll({
+                where: {
+                    username: req.params.username
+                },
+                limit: 1
+            }).then(function(dbGrower) {
+                //console.log(dbGrower.dataValues)
+                // let growers = dbGrower
+                // console.log(growers)
+                res.render('profile', { name, business_name, usertype, dbGrower });
+                //res.json(dbGrower);
+            });
+        } else {
+            db.Dispenser.findAll({
+                where: {
+                    username: req.params.username
+                },
+                limit: 1
+            }).then(function(dbDispenser) {
+                //console.log(dbGrower.dataValues)
+                // let growers = dbGrower
+                // console.log(growers)
+                res.render('profile', { name, business_name, usertype, dbDispenser });
+                //res.json(dbGrower);
+            });
+        }
     } else {
         res.redirect('/join');
     }
