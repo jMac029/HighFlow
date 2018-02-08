@@ -48,8 +48,7 @@ router.post('/api/growers', (req, res) => {
             image: req.body.grower_img
         }).then((dbGrower) => {
             // res.cookie('username', req.body.username)
-            res.cookie('highflow', JSONCookies(dbGrower))
-            res.redirect('/growers')
+            res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {
             res.render('error')
