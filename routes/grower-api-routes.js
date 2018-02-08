@@ -47,7 +47,6 @@ router.post('/api/growers', (req, res) => {
             webpage: req.body.grower_web,
             image: req.body.grower_img
         }).then((dbGrower) => {
-            // res.cookie('username', req.body.username)
             res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {

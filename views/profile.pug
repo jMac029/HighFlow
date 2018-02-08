@@ -3,45 +3,39 @@ block css
     link(rel='stylesheet' href='/assets/css/profile.css')
 block contents
     .container
-        .row.my-2
+        a(href='/growers') 
+            button.btn.btn-secondary.btn-lg(type='button') Edit Profile
+        a(href='/dispensaries') 
+            button.btn.btn-primary.btn-lg(type='button') Delete Profile
+        .jumbotron.jumbotron-fluid
             .col-lg-8.order-lg-2
-            ul.nav.nav-tabs
-                li.nav-item
-                a.nav-link.active(href='' data-target='#profile' data-toggle='tab') Profile
-                li.nav-item
-                a.nav-link(href='' data-target='#messages' data-toggle='tab') Messages
-                li.nav-item
-                a.nav-link(href='' data-target='#edit' data-toggle='tab') Edit
-            .tab-content.py-4
-                #profile.tab-pane.active
-                    .row
-                        .col-md-6
-                            each grower in dbGrower
-                                h4 Username
-                                p= grower.username
-                                h4 Business Name
-                                p= grower.grower_name
-                                h4 License#
-                                p= grower.license
-                                h4 City
-                                p= grower.city
-                                h4 State
-                                p= grower.state
-                                h4 Email
-                                p= grower.email
-                                h4 Grow System
-                                p= grower.system
-                                h4 Strains
-                                p= grower.strains
-                                h4 Grow Cycle
-                                p= grower.cycle
-                                h4 About
-                                p= grower.about
-                                h4 Webpage
-                                p= grower.web
-                                h4 Profile Image
-                                img.rounded.float-left(src=grower.image alt='grower1')
-                                p= grower.image
+                each grower in dbGrower
+                    h4.image Profile Image
+                        img.rounded.float-left(src=grower.image alt=grower.id)
+                        p= grower.image
+                    h4 Username
+                    p= grower.username
+                    h4 Business Name
+                    p= grower.grower_name
+                    h4 License#
+                    p= grower.license
+                    h4 City
+                    p= grower.city
+                    h4 State
+                    p= grower.state
+                    h4 Email
+                    p= grower.email
+                    h4 Grow System
+                    p= grower.system
+                    h4 Strains
+                    p= grower.strains
+                    h4 Grow Cycle
+                    p= grower.cycle
+                    h4 About
+                    p= grower.about
+                    h4 Webpage
+                    p= grower.web
+                   
             #modal1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
                 .modal-dialog(role='document')
                 .modal-content
