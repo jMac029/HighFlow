@@ -1,57 +1,65 @@
-extends layouts.pug
+extends main.pug
 block css
   link(rel='stylesheet' href='/assets/css/lists.css')
-block nav
-  nav.navbar.fixed-top.navbar-expand-lg
-    a.navbar-brand(href='/') HighFlow
-    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarNavDropdown.navbar-collapse.collapse
-      ul.navbar-nav.mr-auto
-        li.nav-item.active
-          a.nav-link(href='/main')
-            | Home 
-            span.sr-only (current)
-        li.nav-item
-          a.nav-link(href='/featured') Featured
-        li.nav-item
-          a.nav-link(href='/about') About
+
 block contents
   .jumbotron.jumbotron-fluid
     p.display-4 Local growers closest to you:
     p.lead
-      .card
-        h5.card-header Buddy Boy Farms
-        .card-body
-          img.rounded.float-right(src='/assets/images/grower2.jpg' alt='grower1')
-          h5.card-title Premium Marijuana Growers
-          p.card-text The largest growing, legal marijuana farm in Northern OC
-          button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
-          #myModal.modal.fade(role='dialog')
-            .modal-dialog
-              .modal-content
-                .modal-header
-                  h4.modal-title Buddy Boy Farms
-                .modal-body
-                  a(href='#') www.buddyboyfarms.com
-                  p 555 Sunset Ave, Anaheim Hills, CA 92807
-                  p (714) 555-1234
-                .modal-footer
-                  button.btn.btn-default(type='button' data-dismiss='modal') Close
-      .card
-        h5.card-header Featured
-        .card-body
-          h5.card-title Special title treatment
-          img.rounded.float-right(src='...' alt='...')
-          p.card-text With supporting text below as a natural lead-in to additional content.
-          a.btn.btn-primary(href='#') Go somewhere
-      .card
-        h5.card-header Featured
-        .card-body
-          h5.card-title Special title treatment
-          img.rounded.float-right(src='...' alt='...')
-          p.card-text With supporting text below as a natural lead-in to additional content.
-          a.btn.btn-primary(href='#') Go somewhere
+      each grower in dbGrower
+        .card(id = grower.id)
+          h5.card-header= grower.grower_name
+            .card-body
+              img.rounded.float-right(src=grower.image alt='grower1')
+              h5.card-title= grower.about
+              p.card-text= "License: " + grower.license
+              p.card-text= "Strains: " + grower.strains
+              p.card-text= "System: " + grower.system
+              p.card-text= "Grow Cycle: " + grower.cycle
+              button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(grower.id)) Contact
+              .modal.fade(role='dialog')(id = "myModal-"+(grower.id))
+                .modal-dialog
+                    .modal-content
+                      .modal-header
+                        h4.modal-title= grower.grower_name
+                      .modal-body
+                        a.weblink(href=grower.webpage)= grower.webpage
+                        p= grower.city + ", " + grower.state
+                        p= grower.email
+                      .modal-footer
+                        button.btn.btn-default(type='button' data-dismiss='modal') Close
+      //- .card
+      //-   h5.card-header Buddy Boy Farms
+      //-   .card-body
+      //-     img.rounded.float-right(src='/assets/images/grower2.jpg' alt='grower1')
+      //-     h5.card-title Premium Marijuana Growers
+      //-     p.card-text The largest growing, legal marijuana farm in Northern OC
+      //-     button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
+      //-     #myModal.modal.fade(role='dialog')
+      //-       .modal-dialog
+      //-         .modal-content
+      //-           .modal-header
+      //-             h4.modal-title Buddy Boy Farms
+      //-           .modal-body
+      //-             a(href='#') www.buddyboyfarms.com
+      //-             p 555 Sunset Ave, Anaheim Hills, CA 92807
+      //-             p (714) 555-1234
+      //-           .modal-footer
+      //-             button.btn.btn-default(type='button' data-dismiss='modal') Close
+      //- .card
+      //-   h5.card-header Featured
+      //-   .card-body
+      //-     h5.card-title Special title treatment
+      //-     img.rounded.float-right(src='...' alt='...')
+      //-     p.card-text With supporting text below as a natural lead-in to additional content.
+      //-     a.btn.btn-primary(href='#') Go somewhere
+      //- .card
+      //-   h5.card-header Featured
+      //-   .card-body
+      //-     h5.card-title Special title treatment
+      //-     img.rounded.float-right(src='...' alt='...')
+      //-     p.card-text With supporting text below as a natural lead-in to additional content.
+      //-     a.btn.btn-primary(href='#') Go somewhere
 
 
 

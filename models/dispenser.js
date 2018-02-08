@@ -1,6 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-    let dispenser = sequelize.define("Dispenser", {
+    let Dispenser = sequelize.define("Dispenser", {
         // Giving the Dispenser model a name of type STRING
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+            }
+        },
         dispenser_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -26,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2]
+                len: [1, 13]
             }
         },
         email: {
@@ -36,18 +43,32 @@ module.exports = function(sequelize, DataTypes) {
                 isEmail: true
             }
         },
-        bio: {
+        about: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
         strains_wanted: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
+            }
+        },
+        webpage: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
+            }
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
             }
         }
     });
@@ -60,5 +81,5 @@ module.exports = function(sequelize, DataTypes) {
     //     });
     // };
 
-    return dispenser;
+    return Dispenser;
 };

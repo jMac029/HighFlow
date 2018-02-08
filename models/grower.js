@@ -1,6 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-    let grower = sequelize.define("Grower", {
+    let Grower = sequelize.define("Grower", {
         // Giving the Grower model a name of type STRING
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+            }
+        },
         grower_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -26,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2]
+                len: [1, 13]
             }
         },
         email: {
@@ -36,47 +43,57 @@ module.exports = function(sequelize, DataTypes) {
                 isEmail: true
             }
         },
-        bio: {
+        about: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
-        grow_method: {
+        system: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
-        },
-        indoor: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
         },
         strains: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
-                len: [1, 280]
+                len: [0, 280]
             }
         },
         cycle: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len: [1, 140]
+                len: [0, 140]
+            }
+        },
+        webpage: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
+            }
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                len: [0, 140]
             }
         }
     });
 
-    // grower.associate = function(models) {
-    //     // Associating Grower with Products
-    //     // When an Grower is deleted, also delete any associated Products
-    //     grower.hasMany(models.product, {
-    //         onDelete: "cascade"
-    //     });
-    // };
+    Grower.associate = function(models) {
+        // Associating Grower with Products
+        // When an Grower is deleted, also delete any associated Products
+        Grower.hasMany(models.Product, {
+            onDelete: "cascade"
+        });
+    };
 
-    return grower;
+    return Grower;
 };

@@ -1,0 +1,131 @@
+extends layouts.pug
+block css
+    link(rel='stylesheet' href='/assets/css/profile.css')
+block contents
+    .container
+        a(href='/growers') 
+            button.btn.btn-secondary.btn-lg(type='button') Edit Profile
+        a(href='/dispensaries') 
+            button.btn.btn-primary.btn-lg(type='button') Delete Profile
+        .jumbotron.jumbotron-fluid
+            .col-lg-8.order-lg-2
+                each grower in dbGrower
+                    h4.image Profile Image
+                        img.rounded.float-left(src=grower.image alt=grower.id)
+                        p= grower.image
+                    h4 Username
+                    p= grower.username
+                    h4 Business Name
+                    p= grower.grower_name
+                    h4 License#
+                    p= grower.license
+                    h4 City
+                    p= grower.city
+                    h4 State
+                    p= grower.state
+                    h4 Email
+                    p= grower.email
+                    h4 Grow System
+                    p= grower.system
+                    h4 Strains
+                    p= grower.strains
+                    h4 Grow Cycle
+                    p= grower.cycle
+                    h4 About
+                    p= grower.about
+                    h4 Webpage
+                    p= grower.web
+                   
+            #modal1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
+                .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                    h5#userType.modal-title Sign-Up!
+                    label#instruction(for='instruction')
+                        span(aria-hidden='true') 
+                    .modal-body
+                        form.grower-form(action='/api/growers', method='post')
+                            .form-group
+                                label.form-control-label(for='grower-username') Username:
+                                input#grower-name.form-control(type='text' placeholder='Ex) jsmith ** No Space ** ' name='username')
+                                label.form-control-label(for='grower-name') Business Name:
+                                input#grower-name.form-control(type='text' placeholder='Ex) Leafly' name='business_name')
+                                label.form-control-label(for='grower_license') License ID:
+                                input#grower-license.form-control(type='text' placeholder='Ex) M00-00-0000000-TEMP' name='grower_license')
+                                label.form-control-label(for='grower-city') City:
+                                input#grower-city.form-control(type='text' placeholder='Ex) Los Angeles' name='grower_city')
+                                .form-group
+                                label(for='grower-state') State:
+                                select#grower-state.form-control(type='state' name='grower_state')
+                                    option Select
+                                    option Alabama
+                                    option Arizona
+                                    option Arkansas
+                                    option California
+                                    option Colorado
+                                    option Connecticut
+                                    option Delaware
+                                    option Florida
+                                    option Georgia
+                                    option Hawaii
+                                    option Idaho
+                                    option Illinois
+                                    option Indiana
+                                    option Lowa
+                                    option Kentucky
+                                    option Louisiana
+                                    option Maine
+                                    option Maryland
+                                    option Massachusetts
+                                    option Michigan
+                                    option Minnesota
+                                    option Michigan
+                                    option Missouri
+                                    option Montana
+                                    option Nevada
+                                    option New Hampshire
+                                    option New Jersey
+                                    option New Mexico
+                                    option New York
+                                    option North Dekota
+                                    option Ohio
+                                    option Oregon
+                                    option Rhode Island
+                                    option Tennessee
+                                    option Texas
+                                    option Utah
+                                    option Washington
+                                    option West Virginia
+                                    option Wisconsin
+
+                                label.form-control-label(for='grower-email') Email:
+                                input#grower-email.form-control(type='email' placeholder='Ex) highflow@example.com' name='grower_email')
+                            .form-group
+                                label.form-control-label(for='grower-system') What growing system do you have?
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Hydroponic or Closed System' checked='')
+                                    label#system-option.form-check-label(for='hydroponic')
+                                        | Hydroponic or Closed System
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Greenhouse (Indoor Grow Room)')
+                                    label#system-option.form-check-label(for='greenhouse')
+                                        | Greenhouse (Indoor Grow Room)
+                                .form-check
+                                    input#system-option.form-check-input(type='radio' name='grower_system' value='Outdoor')
+                                    label#system-option.form-check-label(for='outdoor')
+                                        | Outdoor
+                            .form-group        
+                                label.form-control-label(for='grower-strains') Strains:
+                                input#grower-strains.form-control(type='text' placeholder='Ex) Sd or Sour Diesel' name='grower_strains')
+                                label.form-control-label(for='grower-cycle') Cycle:
+                                input#grower-cycle.form-control(type='text' placeholder='Ex) 3 Months' name='grower_cycle')
+                                label.form-control-label(for='grower-about') About:
+                                input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of your business.' name='grower_about')  
+                                label.form-control-label(for='grower-web') Web Page:
+                                input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='grower_web')
+                                label.form-control-label(for='grower-img') Profile Image URL:
+                                input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='grower_img')
+                                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                button#growerBttn.btn.btn-primary(type='submit') Submit
+            
+

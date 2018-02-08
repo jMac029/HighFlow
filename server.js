@@ -1,12 +1,10 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser")
 
 const app = express()
-//const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080
 
-// meeso port
-const PORT = process.env.PORT || 8081
 
 let db = require("./models")
 
@@ -26,39 +24,39 @@ app.use(cookieParser())
 app.set('view engine', 'pug');
 
 
-// app.get('/', function(req, res) {
-//     res.render('about', { basedir: __dirname });
-// });
-
 // Routes
 const mainRoutes = require('./routes')
+const growerRoutes = require('./routes/grower-api-routes.js')
+const dispenserRoutes = require('./routes/dispenser-api-routes.js')
+const profileRoutes = require('./routes/profile-routes.js')
 
 app.use(mainRoutes)
+app.use(growerRoutes)
+app.use(dispenserRoutes)
+app.use(profileRoutes)
+
+// Error Handling
+app.use((req, res, next) => {
+    const err = new Error('Not Found')
+    err.status = 404
+    next(err)
+})
+
+app.use((err, req, res, next) => {
+    res.locals.error = err
+    res.status(err.status)
+    res.render('error')
+})
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(() => {
-    // return db.Grower.create({
-    //     grower_name: "McMillan Farms",
-    //     city: "Forbestown",
-    //     state: "CA",
-    //     email: "mcmillan_farms@example.com",
-    //     bio: "Jesus told me to do it.",
-    //     grow_method: "I plant in the best soil known to man Chicken Manuare and Steer Manuare blend.",
-    //     indoor: false,
-    //     strains: "Sativa and Indiga",
-    //     cycle: "every september/october"
-    // })
-    // return db.Dispenser.create({
-    //     grower_name: "McMillan Greens",
-    //     dispenser_name: "McMillan Greens",
-    //     city: "San Francisco",
-    //     state: "CA",
-    //     email: "mcmillan_greens@example.com",
-    //     bio: "Jesus told me to do it.",
-    //     strains_wanted: "Sativa and Indiga"
-    // })
-    app.listen(PORT, () => {
-        console.log("App listening on PORT " + PORT);
+
+// if (process.env.JAWSDB_URL) {
+//     connection = mysql.createConnection(process.env.JAWSDB_URL)
+// } else {
+db.sequelize.sync().then(() => {
+        app.listen(PORT, () => {
+            console.log("App listening on PORT " + PORT);
+        })
     })
-})
+    // }
