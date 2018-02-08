@@ -16,21 +16,10 @@ block contents
   h1.my-4 Meet our newest members..
   .container
     .row
-      .col-lg-4.col-sm-6.portfolio-item
-        .card.h-100
-          a(href='https://www.happynhealthysolutions.com/') 
-            img.card-img-top(src='/assets/images/dis1.jpg')
-          .card-body
-            h4.card-title Happy & Healthy Solutions
-      .col-lg-4.col-sm-6.portfolio-item
-        .card.h-100
-          a(href='http://www.buddyboyfarm.com/')
-            img.card-img-top(src='/assets/images/grower2.jpg')
-          .card-body
-            h4.card-title Buddy Boy Farms
-      .col-lg-4.col-sm-6.portfolio-item
-        .card.h-100
-          a(href='http://budandbloomoc.com/')
-            img.card-img-top(src='/assets/images/dis2.jpg')
-          .card-body
-            h4.card-title Bud & Bloom
+      for grower in dbGrower
+        .col-lg-4.col-sm-6.portfolio-item
+          .card.h-100#grower.id
+            a(href= grower.webpage) 
+              img.card-img-top(src=grower.image)
+            .card-body
+              h4.card-title= grower.grower_name

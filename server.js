@@ -1,6 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser")
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -28,15 +28,35 @@ app.set('view engine', 'pug');
 const mainRoutes = require('./routes')
 const growerRoutes = require('./routes/grower-api-routes.js')
 const dispenserRoutes = require('./routes/dispenser-api-routes.js')
+const profileRoutes = require('./routes/profile-routes.js')
 
 app.use(mainRoutes)
 app.use(growerRoutes)
 app.use(dispenserRoutes)
+app.use(profileRoutes)
+
+// Error Handling
+app.use((req, res, next) => {
+    const err = new Error('Not Found')
+    err.status = 404
+    next(err)
+})
+
+app.use((err, req, res, next) => {
+    res.locals.error = err
+    res.status(err.status)
+    res.render('error')
+})
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
+
+// if (process.env.JAWSDB_URL) {
+//     connection = mysql.createConnection(process.env.JAWSDB_URL)
+// } else {
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => {
-        console.log("App listening on PORT " + PORT);
+        app.listen(PORT, () => {
+            console.log("App listening on PORT " + PORT);
+        })
     })
-})
+    // }

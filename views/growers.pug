@@ -7,26 +7,27 @@ block contents
     p.display-4 Local growers closest to you:
     p.lead
       each grower in dbGrower
-        .card
+        .card(id = grower.id)
           h5.card-header= grower.grower_name
             .card-body
-              img.rounded.float-right(src='/assets/images/grower2.jpg' alt='grower1')
-              h5.card-title= grower.bio
-              h6= grower.license
-              p.card-text= grower.strains
-              p.card-text= grower.cycle
-              button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
-              #myModal.modal.fade(role='dialog')
+              img.rounded.float-right(src=grower.image alt='grower1')
+              h5.card-title= grower.about
+              p.card-text= "License: " + grower.license
+              p.card-text= "Strains: " + grower.strains
+              p.card-text= "System: " + grower.system
+              p.card-text= "Grow Cycle: " + grower.cycle
+              button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(grower.id)) Contact
+              .modal.fade(role='dialog')(id = "myModal-"+(grower.id))
                 .modal-dialog
-                  .modal-content
-                    .modal-header
-                      h4.modal-title= grower.grower_name
-                    .modal-body
-                      a(href='#') example.com(need to add website)
-                      p= grower.city, grower.state
-                      p= grower.email
-                    .modal-footer
-                      button.btn.btn-default(type='button' data-dismiss='modal') Close
+                    .modal-content
+                      .modal-header
+                        h4.modal-title= grower.grower_name
+                      .modal-body
+                        a.weblink(href=grower.webpage)= grower.webpage
+                        p= grower.city + ", " + grower.state
+                        p= grower.email
+                      .modal-footer
+                        button.btn.btn-default(type='button' data-dismiss='modal') Close
       //- .card
       //-   h5.card-header Buddy Boy Farms
       //-   .card-body

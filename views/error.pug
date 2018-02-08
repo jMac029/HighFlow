@@ -1,0 +1,7 @@
+extends layouts
+
+block contents
+    .jumbotron
+        div
+            h1= `${error.message} - Status: ${error.status}`
+            a.btn.btn-primary(href='/') Go Home
