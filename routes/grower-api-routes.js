@@ -52,7 +52,7 @@ router.post('/api/growers', (req, res) => {
             res.redirect('/growers')
         })
         .catch((err) => {
-            res.json(err)
+            res.render('error')
         })
 })
 
