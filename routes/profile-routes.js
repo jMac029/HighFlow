@@ -9,7 +9,7 @@ router.get("/profile/:username", (req, res) => {
     const business_name = req.cookies.business_name
     const usertype = req.cookies.usertype
     if (name) {
-        if (usertype === grower) {
+        if (usertype === "grower") {
             db.Grower.findAll({
                 where: {
                     username: req.params.username

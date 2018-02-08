@@ -1,42 +1,76 @@
 extends layouts.pug
+//- - var grower = ""
+//- - var db = ""
+//- case usertype
+//-     when usertype === "grower"
+//-         grower = grower
+//-         db = dbGrower
+//-     when usertype === "dispenser"
+//-         grower = dispenser
+//-         db = dbDispenser 
+
 block css
     link(rel='stylesheet' href='/assets/css/profile.css')
 block contents
     .container
-        a(href='/growers') 
+        a(href='/profile/'+name) 
             button.btn.btn-secondary.btn-lg(type='button') Edit Profile
-        a(href='/dispensaries') 
+        a(href='#myModal-'+name) 
             button.btn.btn-primary.btn-lg(type='button') Delete Profile
         .jumbotron.jumbotron-fluid
             .col-lg-8.order-lg-2
-                each grower in dbGrower
-                    h4.image Profile Image
-                        img.rounded.float-left(src=grower.image alt=grower.id)
-                        p= grower.image
-                    h4 Username
-                    p= grower.username
-                    h4 Business Name
-                    p= grower.grower_name
-                    h4 License#
-                    p= grower.license
-                    h4 City
-                    p= grower.city
-                    h4 State
-                    p= grower.state
-                    h4 Email
-                    p= grower.email
-                    h4 Grow System
-                    p= grower.system
-                    h4 Strains
-                    p= grower.strains
-                    h4 Grow Cycle
-                    p= grower.cycle
-                    h4 About
-                    p= grower.about
-                    h4 Webpage
-                    p= grower.web
+                if usertype === "grower"
+                    each grower in dbGrower
+                        h4.image Profile Image
+                            img.rounded.float-left(src=grower.image alt=grower.username)
+                            p= grower.image
+                        h4 Username
+                        p= grower.username
+                        h4 Business Name
+                        p= grower.grower_name
+                        h4 License#
+                        p= grower.license
+                        h4 City
+                        p= grower.city
+                        h4 State
+                        p= grower.state
+                        h4 Email
+                        p= grower.email
+                        h4 Grow System
+                        p= grower.system
+                        h4 Strains
+                        p= grower.strains
+                        h4 Grow Cycle
+                        p= grower.cycle
+                        h4 About
+                        p= grower.about
+                        h4 Webpage
+                        p= grower.web
+                if usertype === "dispenser"
+                    each dispenser in dbDispenser
+                        h4.image Profile Image
+                            img.rounded.float-left(src=dispenser.image alt=dispenser.username)
+                            p= dispenser.image
+                        h4 Username
+                        p= dispenser.username
+                        h4 Business Name
+                        p= dispenser.dispenser_name
+                        h4 License#
+                        p= dispenser.license
+                        h4 City
+                        p= dispenser.city
+                        h4 State
+                        p= dispenser.state
+                        h4 Email
+                        p= dispenser.email
+                        h4 Strains
+                        p= dispenser.strains_wanted
+                        h4 About
+                        p= dispenser.about
+                        h4 Webpage
+                        p= dispenser.web
                    
-            #modal1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
+            #modal1.modal.fade(tabgrower='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
                 .modal-dialog(role='document')
                 .modal-content
                     .modal-header
