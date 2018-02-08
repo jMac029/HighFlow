@@ -78,6 +78,12 @@ img {
     height: 180px;
 }
 
+#logo {
+    width: 100%;
+    max-width: 40px;
+    max-height: 40px;
+    }
+
 .card-title {
     height: 20px;
 }
