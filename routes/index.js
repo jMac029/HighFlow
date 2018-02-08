@@ -10,7 +10,14 @@ router.get('/', (req, res) => {
     const name = req.cookies.username
     const business_name = req.cookies.business_name
     if (name) {
-        res.render('main', { name, business_name })
+        db.Grower.findAll({
+            limit: 3,
+            order: [
+                ['createdAt', 'DESC']
+            ]
+        }).then(function(dbGrower) {
+            res.render('main', { name, business_name, dbGrower })
+        })
     } else {
         res.redirect('/join');
     }
