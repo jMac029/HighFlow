@@ -96,25 +96,8 @@ router.get("/join", (req, res) => {
 
 // join post route for collecting the username to save in the cookie
 router.post('/join', (req, res) => {
-    res.cookie('username', req.body.username);
+    res.cookie('usertype', req.body.usertype);
     // res.redirect('/');
-    db.Grower.create({
-            grower_name: req.body.username,
-            license: req.body.grower_license,
-            city: req.body.grower_city,
-            state: req.body.grower_state,
-            email: req.body.grower_email,
-            bio: req.body.grower_bio,
-            //indoor: req.body.grower - indoor,
-            strains: req.body.grower_strains,
-            cycle: req.body.grower_cycle
-        }).then((dbGrower) => {
-            res.redirect('/growers')
-                //res.cookie('username', req.body.username);
-        })
-        .catch((err) => {
-            res.render('error')
-        })
 })
 
 // login route loads login
