@@ -11,9 +11,6 @@
     margin: 0 auto;
     padding: 40px;
     text-align: left;
-
-   
-    
 }
 
 .navbar.navbar-expand-lg {
@@ -82,6 +79,12 @@ img {
     height: 180px;
 }
 
+#logo {
+    width: 100%;
+    max-width: 40px;
+    max-height: 40px;
+}
+
 .card-title {
     height: 20px;
 }
@@ -132,12 +135,8 @@ form {
 
 .leftColumn {
     width: 100px;
-    
 }
+
 .rightColumn {
     width: 100px;
-   
 }
-
-
-
