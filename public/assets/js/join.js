@@ -15,7 +15,7 @@ $(document).ready(function() {
             console.log(userType);
             //$.cookie('usertype', userType, { path: '/' })
             Cookies.set('usertype', userType, { path: '/' });
-            if (userType === 'Grower') {
+            if (userType === 'grower') {
                 $(".typeuser").hide()
                 $(".grower-form").show()
             } else {

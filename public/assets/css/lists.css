@@ -84,6 +84,12 @@ img {
     margin-left: 10px;
 }
 
+#logo {
+    width: 100%;
+    max-width: 40px;
+    max-height: 40px;
+}
+
 .btn.btn-info.btn-lg {
     background-color: #3a3a2d;
 }

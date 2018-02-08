@@ -55,8 +55,14 @@ img {
     margin-left: 10px;
 }
 
+#logo {
+    width: 100%;
+    max-width: 40px;
+    max-height: 40px;
+    }
+
 body {
-    background-image: url('../images/green10.jpg');
+    background-image: url('../images/green10.jpg')
     no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
