@@ -100,9 +100,5 @@ router.post('/join', (req, res) => {
     // res.redirect('/');
 })
 
-// login route loads login
-// router.get("/login", (req, res) => {
-//     res.render('login', { basedir: __dirname })
-// })
 
 module.exports = router
