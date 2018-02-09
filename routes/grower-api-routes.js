@@ -54,13 +54,38 @@ router.post('/api/growers', (req, res) => {
         })
 })
 
+router.put('/api/growers/:id', (req, res) => {
+    db.Grower.update({
+            where: {
+                id: req.params.id
+            },
+            username: req.body.username,
+            grower_name: req.body.business_name,
+            license: req.body.grower_license,
+            city: req.body.grower_city,
+            state: req.body.grower_state,
+            email: req.body.grower_email,
+            system: req.body.grower_system,
+            about: req.body.grower_about,
+            strains: req.body.grower_strains,
+            cycle: req.body.grower_cycle,
+            webpage: req.body.grower_web,
+            image: req.body.grower_img
+        }).then((dbGrower) => {
+            res.redirect('/profile/' + req.body.username)
+        })
+        .catch((err) => {
+            res.render('error')
+        })
+})
+
 router.delete("/api/growers/:id", (req, res) => {
     db.Grower.destroy({
         where: {
             id: req.params.id
         }
     }).then(function(dbGrower) {
-        res.json(dbGrower);
+        res.redirect('/')
     });
 });
 
