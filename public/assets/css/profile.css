@@ -103,6 +103,26 @@ img {
     height: 200%;
 }
 
+.modal {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.modal-content {
+    width: 35%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    background-color: #40853b;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.form-group {
+    text-align: left;
+    overflow-y: initial;
+}
+
 .btn.btn-secondary {
     margin: 10px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
