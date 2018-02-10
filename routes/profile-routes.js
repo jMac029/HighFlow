@@ -66,14 +66,15 @@ router.get("/profile/:username", (req, res) => {
 //         })
 // })
 
-// router.delete("/api/growers/:id", (req, res) => {
-//     db.Grower.destroy({
-//         where: {
-//             id: req.params.id
-//         }
-//     }).then(function(dbGrower) {
-//         res.json(dbGrower);
-//     });
-// });
+router.delete("/profile/:id", (req, res) => {
+    console.log(req.body)
+    db.Grower.destroy({
+        where: {
+            id: req.body.grower.username
+        }
+    }).then(function(dbGrower) {
+        res.json(dbGrower);
+    });
+});
 
 module.exports = router
