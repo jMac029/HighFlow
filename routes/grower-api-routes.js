@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const path = require("path")
+const dialog = require('dialog')
 
-let db = require("../models");
+let db = require("../models")
 
-// module.exports = function(app) {
 router.get("/api/growers", (req, res) => {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
@@ -50,7 +50,8 @@ router.post('/api/growers', (req, res) => {
             res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {
-            res.render('error')
+            console.log(err.errors[0].message)
+            dialog.err(err.errors[0].message)
         })
 })
 
@@ -75,20 +76,24 @@ router.put('/api/growers/:id', (req, res) => {
             res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {
-            res.render('error')
+            console.log(err.errors[0].message)
+            dialog.err(err.errors[0].message)
         })
 })
 
-router.delete("/api/growers/:id", (req, res) => {
+router.delete('/api/growers/:username', (req, res) => {
+    console.log(req.body)
+    res.clearCookie('username')
+    res.clearCookie('userType')
+    res.clearCookie('business_name')
     db.Grower.destroy({
         where: {
-            id: req.params.id
+            username: req.params.username
         }
-    }).then(function(dbGrower) {
+    }).then(function() {
         res.redirect('/')
-    });
-});
+    })
+})
 
-// };
 
 module.exports = router
