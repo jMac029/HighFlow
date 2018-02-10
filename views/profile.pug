@@ -123,22 +123,23 @@ block contents
                                             label.form-control-label(for='grower-img') Profile Image URL:
                                             input#grower-bio.form-control(type='text' name='grower_img' value=grower.image)
                                             button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                                            button#growerBttn.btn.btn-primary(type='submit') Submit
+                                            button#growerBttn.btn.btn-primary(type='submit' formaction='/api/growers/'+(grower.username) formmethod='put') Submit
                         .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "deleteModal-"+(grower.username))
                             .modal-dialog(role='document')
                             .modal-content
                                 .modal-header
                                 h5.modal-title Delete Profile
                                 .modal-body
-                                    h3 Are you sure you want to leave High Flow?
-                                    h3 Your Profile will be deleted and you will loose access to the largest database of legal marijuna growers in the US!
-                                    h3 You can always sign-up again and re-join us at anytime.
-                                    button.btn.btn-danger(type='button' action='/api/growers/'+(grower.id) method='delete') Delete!
+                                    form.grower-form(action='/api/growers/'+(grower.username) method='delete')
+                                        label Are you sure you want to leave High Flow?
+                                        label Your Profile will be deleted and you will loose access to the largest database of legal marijuna growers in the US!
+                                        label You can always sign-up again and re-join us at anytime.
+                                        button#deleteGrowerProfileBtn.btn.btn-danger(type='submit' formaction='/api/growers/'+(grower.username) formmethod='delete') Delete!
                 if usertype === "dispenser"
                     each dispenser in dbDispenser
                         h4.image Profile Image
                             img.rounded.float-left(src=dispenser.image alt=dispenser.username)
-                            p= dispenser.image
+                                p= dispenser.image
                         h4 Username
                         p= dispenser.username
                         h4 Business Name
@@ -156,8 +157,96 @@ block contents
                         h4 About
                         p= dispenser.about
                         h4 Webpage
-                        p= dispenser.web
-                   
+                        p= dispenser.webpage
+                        .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "myModal-"+(dispenser.username))
+                            .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                h5.modal-title Edit Profile
+                                .modal-body
+                                    form.grower-form(action='/api/dispenser/'+(dispenser.id), method='PUT')
+                                        .form-group
+                                            label.form-control-label(for='dispenser-username') Username:
+                                            input#dispenser-name.form-control(type='text' name='username' value=dispenser.username)
+                                            label.form-control-label(for='dispenser-name') Business Name:
+                                            input#dispenser-name.form-control(type='text' name='dispenser_name' value=dispenser.dispenser_name)
+                                            label.form-control-label(for='dispenser_license') License ID:
+                                            input#dispenser-license.form-control(type='text' name='dispenser_license' value=dispenser.license)
+                                            label.form-control-label(for='dispenser-city') City:
+                                            input#dispenser-city.form-control(type='text' name='dispenser_city' value=dispenser.city)
+                                            .form-group
+                                            label(for='dispenser-state') State:
+                                            select#dispenser-state.form-control(type='state' name='dispenser_state' value=dispenser.state)
+                                                option Select
+                                                option Alabama
+                                                option Arizona
+                                                option Arkansas
+                                                option California
+                                                option Colorado
+                                                option Connecticut
+                                                option Delaware
+                                                option Florida
+                                                option Georgia
+                                                option Hawaii
+                                                option Idaho
+                                                option Illinois
+                                                option Indiana
+                                                option Lowa
+                                                option Kentucky
+                                                option Louisiana
+                                                option Maine
+                                                option Maryland
+                                                option Massachusetts
+                                                option Michigan
+                                                option Minnesota
+                                                option Michigan
+                                                option Missouri
+                                                option Montana
+                                                option Nevada
+                                                option New Hampshire
+                                                option New Jersey
+                                                option New Mexico
+                                                option New York
+                                                option North Dekota
+                                                option Ohio
+                                                option Oregon
+                                                option Rhode Island
+                                                option Tennessee
+                                                option Texas
+                                                option Utah
+                                                option Washington
+                                                option West Virginia
+                                                option Wisconsin
+
+                                            label.form-control-label(for='dispenser-email') Email:
+                                            input#dispenser-email.form-control(type='email' name='dispenser_email' value=dispenser.email)
+                                        .form-group        
+                                            label.form-control-label(for='dispenser-strains') Strains:
+                                            input#dispenser-strains.form-control(type='text' name='dispenser_strains' value=dispenser.strains_wanted)
+                                            label.form-control-label(for='grower-cycle') Cycle:
+                                            input#dispenser-cycle.form-control(type='text' name='dispenser_cycle' value=dispenser.cycle)
+                                            label.form-control-label(for='grower-about') About:
+                                            input#dispenser-bio.form-control(type='text' name='dispenser_about' value=dispenser.about)  
+                                            label.form-control-label(for='grower-web') Web Page:
+                                            input#dispenser-bio.form-control(type='text' name='dispenser_web' value=dispenser.webpage)
+                                            label.form-control-label(for='grower-img') Profile Image URL:
+                                            input#dispenser-bio.form-control(type='text' name='dispenser_img' value=dispenser.image)
+                                            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                            button#dispenserBttn.btn.btn-primary(type='submit' formmethod='PUT') Submit
+                        .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "deleteModal-"+(grower.username))
+                            .modal-dialog(role='document')
+                            .modal-content
+                                .modal-header
+                                h5.modal-title Delete Profile
+                                .modal-body
+                                    form.grower-form(action='/api/growers/'+(grower.id), method='DELETE')
+                                        label Are you sure you want to leave High Flow?
+                                        label Your Profile will be deleted and you will loose access to the largest database of legal marijuna growers in the US!
+                                        label You can always sign-up again and re-join us at anytime.
+                                        button#deleteGrowerProfileBtn.btn.btn-danger(type='submit' formmethod='delete') Delete!
+    //- block scripts
+    //-     //- Javascript for Modal Buttons
+    //-     script(src='/assets/js/profile.js')   
             
             
 

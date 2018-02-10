@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const path = require("path")
+const dialog = require('dialog')
 
 let db = require("../models");
 
-// module.exports = function(router) {
 router.get("/api/dispensers", (req, res) => {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
@@ -48,7 +48,8 @@ router.post("/api/dispensers", (req, res) => {
             res.redirect('/profile/' + req.body.username)
         })
         .catch((err) => {
-            res.render('error')
+            console.log(err.errors[0].message)
+            dialog.err(err.errors[0].message)
         })
 });
 
@@ -62,6 +63,5 @@ router.delete("/api/dispensers/:id", (req, res) => {
     });
 });
 
-// };
 
 module.exports = router

@@ -44,6 +44,7 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
     res.locals.error = err
+        //res.status(err.status >= 100 && err.status < 600 ? err.code : 500)
     res.status(err.status)
     res.render('error')
 })
@@ -51,12 +52,8 @@ app.use((err, req, res, next) => {
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
-// if (process.env.JAWSDB_URL) {
-//     connection = mysql.createConnection(process.env.JAWSDB_URL)
-// } else {
 db.sequelize.sync().then(() => {
-        app.listen(PORT, () => {
-            console.log("App listening on PORT " + PORT);
-        })
+    app.listen(PORT, () => {
+        console.log("App listening on PORT " + PORT);
     })
-    // }
+})
