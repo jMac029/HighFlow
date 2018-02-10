@@ -11,14 +11,14 @@ block contents
         .card.profileCard(id = dispenser.id)
           h5.card-header= dispenser.dispenser_name
           .card-body.profileCard
-            img.rounded.float-right(src=dispenser.image alt='dis1')
+            img#profileImg.rounded.float-right(src=dispenser.image alt='dis1')
             .card-title= dispenser.about
             p.card-text= "License: " + dispenser.license
             p.card-text= 'Strains Wanted: ' + dispenser.strains_wanted
             button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(dispenser.id)) Contact
             .modal.fade(role='dialog')(id = "myModal-"+(dispenser.id))
               .modal-dialog
-                .modal-content
+                .modal-content.profileModal
                   .modal-header
                     h4.modal-title= dispenser.dispenser_name
                   .modal-body
