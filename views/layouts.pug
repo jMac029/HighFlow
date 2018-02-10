@@ -2,19 +2,18 @@ doctype html
 head
   block title
     title HighFlow
+    //- Links for Bootstraps, CSS and Google Fonts
   block links
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
-    link(href='css/bootstrap-dropdownhover.min.css' rel='stylesheet')
-    link(href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Monoton|Shrikhand" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet")
+    link(href=href="https://fonts.googleapis.com/css?family=Contrail+One|PT+Sans+Narrow|Sedgwick+Ave+Display" rel="stylesheet")
   block css
-    link(rel='stylesheet' href='/assets/css/highflow_style.css')
-    link(rel='stylesheet' href='/assets/css/main.css')
-    
+    link(rel='stylesheet' href='/assets/css/style.css')
+    //- Links for Favicon
+  block favicon
+    link(rel="shortcut icon" href="/assets/images/favicon/highflow.ico" type="image/x-icon")
+    link(rel="icon" href="/assets/images/favicon/highflow.ico" type="image/x-icon")
 
 block nav
   nav.navbar.navbar-expand-lg
@@ -22,10 +21,11 @@ block nav
       img#logo.logo(src='/assets/images/logo.png' alt='logo')
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
-    #navbarNavDropdown.navbar-collapse.collapse
+    #navbarsExampleDefault.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
         li.nav-item
           a.nav-link(href='/about') About
+            span.sr-only (currnet)
         if name
           li.nav-item
             a.nav-link(href='/growers') Growers
@@ -40,44 +40,9 @@ block nav
             a.nav-link(href="/profile/"+name)= business_name
 
 block contents
+  .jumbotron
+  .container
 
-    //- .jumbotron
-    //-   div
-    //-   span#high High
-    //-   span#flow Flow
-    //-   p.lead
-    //-     | Join the largest network of licensed Marijuna growers and distributors in Southern California
-    //-   p.lead
-    //-     | Locations available in Orange, San Diego and LA Counties
-    //-   p.lead
-    //-     a.btn.btn-primary.btn-lg(href='#' role='button') Join
-    //- #carouselExampleIndicators.carousel.slide(data-ride='carousel' style='width: 40%; margin: 0 auto;')
-    //-   ol.carousel-indicators
-    //-     li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-    //-     li(data-target='#carouselExampleIndicators' data-slide-to='1')
-    //-     li(data-target='#carouselExampleIndicators' data-slide-to='2')
-    //-   .carousel-inner
-    //-     .carousel-item.active
-    //-       img.d-block.w-100(src='/assets/images/grower1.jpg' alt='First slide')
-    //-       .carousel-caption.d-none.d-md-block
-    //-         h5 ~ Local Growers ~
-    //-         p Meet legal growers who can expand your stock
-    //-     .carousel-item
-    //-       img.d-block.w-100(src='/assets/images/weed5.jpg' alt='Second slide')
-    //-       .carousel-caption.d-none.d-md-block
-    //-         h5 ~ New Product ~
-    //-         p Keep up to date with the newest strains in your area
-    //-     .carousel-item
-    //-       img.d-block.w-100(src='/assets/images/dis3.jpg' alt='Third slide')
-    //-       .carousel-caption.d-none.d-md-block
-    //-         h5 ~ Dispensaries ~
-    //-         p Find licensed distributors who will keep your supply in demand
-    //-   a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-    //-     span.carousel-control-prev-icon(aria-hidden='true')
-    //-     span.sr-only Previous
-    //-   a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-    //-     span.carousel-control-next-icon(aria-hidden='true')
-    //-     span.sr-only Next
 block scripts
   script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
@@ -85,6 +50,6 @@ block scripts
 block footer  
   nav.navbar.fixed-bottom.navbar.bg
     a.navbar-brand(href='#') 
-    p.m-0.text-center.text-white &copy; HighFlow 2018
+    p.m-0 &copy; HighFlow 2018
    
 
