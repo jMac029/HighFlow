@@ -1,0 +1,347 @@
+/* Universal Style CSS */
+nav {
+    background-color: #000000;
+    font-family: 'Contrail One', cursive;
+    font-size: 20px;
+}
+
+.navbar.fixed-bottom.navbar.bg {
+    background-color: #a3ec5e;
+}
+
+a {
+    color: #ffffff;
+    font-family: 'Contrail One', cursive;
+}
+
+a:hover {
+    color: #a200ff;
+}
+
+a.btn {
+    background-color: #3a3a2d;
+    color: #c0c0b2;
+    box-shadow: 0 0 2px 1px #24572c;
+}
+#mainimg {
+    max-width: 70px;
+    max-height: 70px;
+}
+
+#mainlogo {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-weight: 100;
+    font-size: 80px;
+    color: #3eff17;
+    text-shadow: -7px 0 #a200ff;
+}
+
+h1 {
+    font-family: 'Contrail One', cursive;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0;
+}
+
+h4 {
+    color: #3a3a2d;
+    font-family: 'Contrail One', cursive;
+}
+
+img {
+    width: 100%;
+    height: 180px;
+}
+
+#logo {
+    width: 100%;
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: -7px;
+}
+
+body {
+    background: linear-gradient(#000000 20%, #affd66)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 80px;
+    text-align: center;
+    /* Value below from profile.css */
+    /* width: 100%;
+    height: 100%;
+    flex: 1; */
+}
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+button {
+    margin: 5px 5px 0 5px;
+    font-family: 'Contrail One', cursive;
+    width: 150px;
+}
+
+.col-lg-4.col-sm-6.portfolio-item {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+}
+
+.my-4 {
+    margin-left: 20px;
+}
+
+.lead {
+    color: #ffffff;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 14pt;
+    margin-bottom: 0px;
+}
+
+.btn.btn-secondary.btn-lg {
+    background-color: #40853b;
+    color: #ffffff;
+    box-shadow: 0 0 3px 2px #3a3a2d;
+}
+
+.card {
+    width: 320px;
+    height: 250px;
+}
+
+p.m-0 {
+    color: #3a3a2d;
+    text-align: right;
+    font-size: 17px;
+}
+
+/* CSS for About Page */
+#about.container {
+    position: relative;
+    width: 80%;
+    height: 100% auto;
+    max-width: 900px;
+    border-radius: 15px;
+    border: 2px solid #73AD21;
+    text-align: center;
+    background: linear-gradient(#0e130f, #40853b);
+    font-family: 'Contrail One', cursive;
+    box-shadow: 3px 3px 3px 4px #000000;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    padding: 20px;
+}
+
+.navbar.navbar-expand-lg {
+    background-color: #000000;
+    box-shadow: 0 0 3px 4px #000000;
+    font-family: 'Contrail One', cursive;
+}
+
+.display-4 {
+    font-family: 'Contrail One', cursive;
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+p#about.lead {
+    margin-bottom: 20px; 
+    text-align: left;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.col-md-3.col-sm-6.portfolio-item {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 210px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    height: 20px;
+    color: #ffffff;
+}
+
+#card.row {
+    max-width: 900px;
+    margin: 0 auto;
+    align-content: center;
+    margin-top: -40px;
+}
+
+.card-body {
+    background-color: #000000;
+}
+
+/* CSS for Sign-up Modal */
+.btn.btn-secondary {
+    margin: 10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px solid black;
+}
+
+.btn.btn-primary {
+    margin: 10px;
+    background-color: #94372a;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px solid black;
+}
+
+.custom-file-control {
+    margin: 15px;
+    padding: 10px;
+    background-color: #646863;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px solid black;
+}
+
+.btn.btn-primary#signup-modal {
+    background-color: #5ac43f;
+    color: #c5ff8f;
+    border: none;
+    margin: 20px 0 30px 0;
+    max-width: 75px;
+}
+
+.carousel-caption, h5 {
+    color: #080e09;
+    text-shadow: -1px 0 #a7a3a3, 0 1px #a7a3a3, 1px 0 #a7a3a3, 0 -1px #a7a3a3;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Contrail One', cursive;
+}
+
+#modal1 {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 300px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    background-color: #40853b;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#userType.modal-title {
+    margin-top: 10px;
+}
+
+.modal-body.show {
+    margin-top: -20px;
+}
+
+label {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 18px;
+}
+
+.form-group {
+    text-align: left;
+    overflow-y: initial;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+h5 {
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#userTypeOptions {
+    margin-bottom: 15px;
+}
+
+.buttn-container {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btn.btn-secondary {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-color: #5ac43f;
+    color: #c5ff8f;
+    border: none;
+    max-width: 110px;
+}
+
+.btn.btn-primary {
+    background-color: #3f4e3a;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-color: #5ac43f;
+    color: #c5ff8f;
+    border: none;
+    max-width: 110px;
+    margin-left: 10px;
+}
+
+.required {
+    color: #fff066;
+}
+
+/* CSS for Profile Page */
+.jumbotron {
+    text-align: center;
+    background: none;
+}
+
+.products {
+    height: 200%;
+}
+
+.modal {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.custom-file-control {
+    margin: 15px;
+    padding: 10px;
+    background-color: #646863;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px solid black;
+}
+
+form {
+    overflow: auto;
+}
+
+.image {
+    float: right;
+    margin-right: -20px
+}
+
+.leftColumn {
+    width: 100px;
+}
+
+.rightColumn {
+    width: 100px;
+}

@@ -1,13 +1,14 @@
 extends layouts
 block css
-    link(rel='stylesheet' href='/assets/css/join.css')
+    link(rel='stylesheet' href='/assets/css/style.css')
 block contents
-  .jumbotron
-    div
-    span#high High
-    span#flow Flow
-    p.lead Join the largest network of licensed Marijuna growers and distributors in Southern California
-    p.lead Locations available in Orange, San Diego and LA Counties
+  .container
+    .row
+    img#mainimg.logo(src='/assets/images/logo2.png' alt='logo')
+    br
+    span#mainlogo HighFlow
+    p.lead Join the largest network of licensed Marijuna growers and dispensaries in the United States.
+    p.lead Locations available in Orange, San Diego and LA Counties.
     button.btn.btn-primary#signup-modal(type='button' data-toggle='modal' data-target='#modal1') Join
 
     #modal1.modal.fade(tabindex='-1' role='dialog' aria-labelledby='userType' aria-hidden='true')
@@ -116,13 +117,14 @@ block contents
                         label.form-control-label(for='grower-cycle') Cycle:
                         input#grower-cycle.form-control(type='text' placeholder='Ex) 3 Months' name='grower_cycle')
                         label.form-control-label(for='grower-about') About:
-                        input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of your business.' name='grower_about')  
+                        input#dispenser-bio.form-control(type='text' placeholder='A brief introduction of your business' name='grower_about')  
                         label.form-control-label(for='grower-web') Web Page:
                         input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='grower_web')
                         label.form-control-label(for='grower-img') Profile Image URL:
-                        input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='grower_img')
-                        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button#growerBttn.btn.btn-primary(type='submit') Submit
+                        input#grower-bio.form-control(type='text' placeholder='Ex) image.png' name='grower_img')
+                        .buttn-container    
+                            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                            button#growerBttn.btn.btn-primary(type='submit') Submit
                 form.dispenser-form(action='/api/dispensers', method='post')
                     .form-group
                         label.required(for="required") *
@@ -186,15 +188,16 @@ block contents
                         label.form-control-label(for='dispenser-email') Email:
                         input#dispenser-email.form-control(type='email' placeholder='Ex) highflow@example.com' name='dispenser_email')
                         label.form-control-label(for='dispenser-about') About:
-                        input#dispenser-bio.form-control(type='text' placeholder='Please give us a brief descriptionn of you' name='dispenser_about')           
+                        input#dispenser-bio.form-control(type='text' placeholder='A brief introduction of your business' name='dispenser_about')           
                         label.form-control-label(for='dispenser-strains') Strains Wanted:
                         input#dispenser-strains-wanted.form-control(type='text' placeholder='Ex) Cp or Cherry Pie' name='dispenser_strains')
                         label.form-control-label(for='dispenser-web') Web Page:
                         input#grower-bio.form-control(type='text' placeholder='Ex) https://www.leafly.com/' name='dispenser_web')
                         label.form-control-label(for='dispenser-img') Profile Image URL:
-                        input#grower-bio.form-control(type='text' placeholder='Ex) cdn.image...png' name='dispenser_img')
-                        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
-                        button#dispenserBttn.btn.btn-primary(type='submit') Submit
+                        input#grower-bio.form-control(type='text' placeholder='Ex) image.png' name='dispenser_img')
+                        .buttn-container    
+                            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                            button#dispenserBttn.btn.btn-primary(type='submit') Submit
 
     block scripts
         script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')

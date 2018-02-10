@@ -1,13 +1,13 @@
 extends layouts.pug
 block css
-  link(rel='stylesheet' href='/assets/css/about.css')
+  link(rel='stylesheet' href='/assets/css/style.css')
 block contents
-  .jumbotron.jumbotron-fluid
-    h1.display-4 Our Mission..
-    p.lead As the movement to end marijuana prohibition extends beyond a handful of states, we are commited to standing at the forefront to provide people crucial networking connections to help expand their business.
+  #about.container
+    h1.display-4 About
+    p#about.lead HighFlow is a website for coding bootcamp project #2 that brings together dispensaries and growers in the reliable marijuana community for both medical and recreational purposes. The local dispensaries have timesaving and legal way of finding a list of the growers. Both dispensaries and growers have their own profiles registered on the website. The database technology will help the dispensaries to match the specific products as their needs and to contact the accredited growers easily based on their locations and offers.
     h1.display-4 Our Developers
     .container
-      .row
+      #card.row
         .col-md-3.col-sm-6.portfolio-item
           .card.h-100
             a(href='https://github.com/yangmeeso') 
