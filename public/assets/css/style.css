@@ -190,6 +190,10 @@ p#about.lead {
     color: #000;
 }
 
+#maincard {
+    color: #fff;
+}
+
 #card.row {
     max-width: 900px;
     margin: 0 auto;
