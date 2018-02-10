@@ -1,28 +1,30 @@
 extends layouts.pug
 block css
+  link(rel='stylesheet' href='/assets/css/style.css')
   link(rel='stylesheet' href='/assets/css/lists.css')
 
 block contents
-  .jumbotron.jumbotron-fluid
-    p.display-4 Local dispensaries closest to you:
+  .jumbotron.jumbotron-fluid.listJumbo
+    p.display-4 Local dispensaries near you:
     p.lead
       each dispenser in dbDispenser
-        .card
+        .card.profileCard(id = dispenser.id)
           h5.card-header= dispenser.dispenser_name
-          .card-body
+          .card-body.profileCard
             img.rounded.float-right(src=dispenser.image alt='dis1')
-            h5.card-title= dispenser.bio
-            p.card-text= dispenser.strains_wanted
-            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Contact
-            #myModal.modal.fade(role='dialog')
+            .card-title= dispenser.about
+            p.card-text= "License: " + dispenser.license
+            p.card-text= 'Strains Wanted: ' + dispenser.strains_wanted
+            button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(dispenser.id)) Contact
+            .modal.fade(role='dialog')(id = "myModal-"+(dispenser.id))
               .modal-dialog
                 .modal-content
                   .modal-header
                     h4.modal-title= dispenser.dispenser_name
                   .modal-body
-                    a(href='#') www.example.com
-                    p= dispenser.city, dispenser.state
-                    p= dispenser.email
+                    a.weblink(href= dispenser.webpage target='_blank')= dispenser.webpage
+                    p= dispenser.city + ", "  + dispenser.state
+                    a.weblink(href="mailto:"+ dispenser.email + "?subject=Hello%20from%20HighFlow!")= dispenser.email
                   .modal-footer
                     button.btn.btn-default(type='button' data-dismiss='modal') Close
       //- .card

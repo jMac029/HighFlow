@@ -6,13 +6,12 @@ block contents
     .container
         button.btn.btn-secondary.btn-lg(type='button' data-toggle='modal' data-target='#myModal-'+name) Edit Profile
         button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#deleteModal-'+name) Delete Profile
-        .jumbotron.jumbotron-fluid
+        .jumbotron.jumbotron-fluid#profileJumbo
             .col-lg-8.order-lg-2
                 if usertype === "grower"
                     each grower in dbGrower
                         h4.image Profile Image
                             img.rounded.float-left(src=grower.image alt=grower.username)
-                            p= grower.image
                         h4 Username
                         p= grower.username
                         h4 Business Name
@@ -37,7 +36,7 @@ block contents
                         p= grower.webpage
                         .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "myModal-"+(grower.username))
                             .modal-dialog(role='document')
-                            .modal-content
+                            .modal-content.profileModal
                                 .modal-header
                                 h5.modal-title Edit Profile
                                 .modal-body
@@ -139,7 +138,6 @@ block contents
                     each dispenser in dbDispenser
                         h4.image Profile Image
                             img.rounded.float-left(src=dispenser.image alt=dispenser.username)
-                                p= dispenser.image
                         h4 Username
                         p= dispenser.username
                         h4 Business Name
@@ -164,7 +162,7 @@ block contents
                                 .modal-header
                                 h5.modal-title Edit Profile
                                 .modal-body
-                                    form.grower-form(action='/api/dispenser/'+(dispenser.id), method='PUT')
+                                    form.grower-form(action='/api/dispenser/'+(dispenser.username), method='PUT')
                                         .form-group
                                             label.form-control-label(for='dispenser-username') Username:
                                             input#dispenser-name.form-control(type='text' name='username' value=dispenser.username)
@@ -233,17 +231,17 @@ block contents
                                             input#dispenser-bio.form-control(type='text' name='dispenser_img' value=dispenser.image)
                                             button.btn.btn-secondary(type='button' data-dismiss='modal') Close
                                             button#dispenserBttn.btn.btn-primary(type='submit' formmethod='PUT') Submit
-                        .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "deleteModal-"+(grower.username))
+                        .modal.fade(tabindex='-1' role='dialog' aria-labelledby='editProfile' aria-hidden='true')(id= "deleteModal-"+(dispenser.username))
                             .modal-dialog(role='document')
                             .modal-content
                                 .modal-header
                                 h5.modal-title Delete Profile
                                 .modal-body
-                                    form.grower-form(action='/api/growers/'+(grower.id), method='DELETE')
+                                    form.grower-form(action='/api/dispenser/'+(dispenser.username), method='DELETE')
                                         label Are you sure you want to leave High Flow?
                                         label Your Profile will be deleted and you will loose access to the largest database of legal marijuna growers in the US!
                                         label You can always sign-up again and re-join us at anytime.
-                                        button#deleteGrowerProfileBtn.btn.btn-danger(type='submit' formmethod='delete') Delete!
+                                        button#deleteDispenserProfileBtn.btn.btn-danger(type='submit' formmethod='delete') Delete!
     //- block scripts
     //-     //- Javascript for Modal Buttons
     //-     script(src='/assets/js/profile.js')   

@@ -1,15 +1,19 @@
-.jumbotron {
+.listJumbo {
     width: 80%;
-    height: 590px;
+    height: auto;
     overflow: auto;
     border-radius: 25px;
     border: 2px solid #73AD21;
     background: linear-gradient(#0e130f, #40853b);
-    font-family: 'Courgette', cursive;
-    box-shadow: 3px 3px 3px 4px #1b1b17;
+    /* font-family: 'Courgette', cursive;
+    box-shadow: 3px 3px 3px 4px #1b1b17; */
     vertical-align: middle;
-    margin: 0 auto;
-    padding: 10px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    padding: 40px;
+    text-align: left;
 }
 
 .display-4 {
@@ -19,19 +23,21 @@
     color: #ffffff;
 }
 
-.navbar.navbar-expand-lg {
+
+/* .navbar.navbar-expand-lg {
     background-color: #1b1b17;
     box-shadow: 0 0 3px 4px #1b1b17;
-    font-family: 'Courgette', cursive;
     margin-bottom: 20px;
-}
+} */
 
-a {
+
+/* a {
     color: #fff;
     font-family: 'Courgette', cursive;
-}
+} */
 
-a:hover {
+
+/* a:hover {
     color: #3f8a4a;
 }
 
@@ -43,39 +49,52 @@ a.btn {
 
 .weblink {
     color: #3f8a4a;
-}
+} */
 
-h1 {
+
+/* h1 {
     font-family: 'Shrikhand', cursive;
     color: #c0c0b2;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: left;
     font-size: 20px;
-}
+} */
 
-body {
+
+/* body {
     background-image: url('../images/green10.jpg');
-    no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+} */
 
-.navbar.fixed-bottom.navbar.bg {
+
+/* .navbar.fixed-bottom.navbar.bg {
     background-color: #1b1b17;
     box-shadow: 0 0 3px 4px #1b1b17;
     font-family: 'Courgette', cursive;
-}
+} */
 
-.card {
+.profileCard {
     flex: 1;
-    width: 80%;
+    /* width: 80%; */
     vertical-align: middle;
     margin-bottom: 20px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     border: 2px solid #73AD21;
+    background-color: #fff;
     border-radius: 25px;
+}
+
+.profileModal {
+    width: 100%;
+    max-width: 500px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    background-color: #40853b;
+    color: #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 img {

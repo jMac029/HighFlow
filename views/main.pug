@@ -3,22 +3,23 @@ block css
   link(rel='stylesheet' href='/assets/css/style.css')
 
 block contents 
-  .jumbotron
+  .jumbotron#mainJumbo
     div
-      span#high High
-      span#flow Flow
+      img#mainimg.logo(src='/assets/images/logo2.png' alt='logo')
+      br
+      span#mainlogo HighFlow
     h2.lead Begin your search to expand your network today
   .wrapper
     a(href='/growers') 
         button.btn.btn-secondary.btn-lg(type='button') Growers   
     a(href='/dispensaries') 
         button.btn.btn-secondary.btn-lg(type='button') Dispensaries
-  h1.my-4 Meet our newest members..
+  h1.my-4 Meet our newest growers..
   .container
     .row
       for grower in dbGrower
         .col-lg-4.col-sm-6.portfolio-item
-          .card.h-100#grower.id
+          .card.mainCards.h-100#grower.id
             a(href= grower.webpage) 
               img.card-img-top(src=grower.image)
             .card-body
