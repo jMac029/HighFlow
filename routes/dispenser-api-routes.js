@@ -49,7 +49,7 @@ router.post("/api/dispensers", (req, res) => {
         })
         .catch((err) => {
             console.log(err.errors[0].message)
-            dialog.err(err.errors[0].message)
+            dialog.warn(err.errors[0].message, 'Validation Error')
         })
 });
 

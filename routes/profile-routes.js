@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const path = require("path")
+const dialog = require('dialog')
 
-let db = require("../models");
+let db = require("../models")
 
 router.get("/profile/:username", (req, res) => {
     const name = req.cookies.username
@@ -21,7 +22,10 @@ router.get("/profile/:username", (req, res) => {
                 // console.log(growers)
                 res.render('profile', { name, business_name, usertype, dbGrower });
                 //res.json(dbGrower);
-            });
+            }).catch((err) => {
+                console.log(err)
+                dialog.err(err, 'Error', res.redirect('/'))
+            })
         } else {
             db.Dispenser.findAll({
                 where: {
@@ -34,7 +38,10 @@ router.get("/profile/:username", (req, res) => {
                 // console.log(growers)
                 res.render('profile', { name, business_name, usertype, dbDispenser });
                 //res.json(dbGrower);
-            });
+            }).catch((err) => {
+                console.log(err)
+                dialog.err(err, 'Error', res.redirect('/'))
+            })
         }
     } else {
         res.redirect('/join');
@@ -66,15 +73,15 @@ router.get("/profile/:username", (req, res) => {
 //         })
 // })
 
-router.delete("/profile/:id", (req, res) => {
-    console.log(req.body)
-    db.Grower.destroy({
-        where: {
-            id: req.body.grower.username
-        }
-    }).then(function(dbGrower) {
-        res.json(dbGrower);
-    });
-});
+// router.delete("/profile/:id", (req, res) => {
+//     console.log(req.body)
+//     db.Grower.destroy({
+//         where: {
+//             id: req.body.grower.username
+//         }
+//     }).then(function(dbGrower) {
+//         res.json(dbGrower);
+//     });
+// });
 
 module.exports = router

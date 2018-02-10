@@ -1,17 +1,19 @@
 extends main.pug
 block css
+  link(rel='stylesheet' href='/assets/css/style.css')
   link(rel='stylesheet' href='/assets/css/lists.css')
 
+
 block contents
-  .jumbotron.jumbotron-fluid
+  .jumbotron.jumbotron-fluid.listJumbo
     p.display-4 Local growers closest to you:
     p.lead
       each grower in dbGrower
-        .card(id = grower.id)
+        .card.profileCard(id = grower.id)
           h5.card-header= grower.grower_name
-            .card-body
-              img.rounded.float-right(src=grower.image alt='grower1')
-              h5.card-title= grower.about
+            .card-body.profileCard
+              img#profileImg.rounded.float-right(src=grower.image alt='grower1')
+              .card-title= grower.about
               p.card-text= "License: " + grower.license
               p.card-text= "Strains: " + grower.strains
               p.card-text= "System: " + grower.system
@@ -19,13 +21,13 @@ block contents
               button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target="#myModal-"+(grower.id)) Contact
               .modal.fade(role='dialog')(id = "myModal-"+(grower.id))
                 .modal-dialog
-                    .modal-content
+                    .modal-content.profileModal
                       .modal-header
                         h4.modal-title= grower.grower_name
                       .modal-body
-                        a.weblink(href=grower.webpage)= grower.webpage
+                        a.weblink(href=grower.webpage target='_blank')= grower.webpage
                         p= grower.city + ", " + grower.state
-                        p= grower.email
+                        a.weblink(href="mailto:"+ grower.email + "?subject=Hello%20from%20HighFlow!")= grower.email
                       .modal-footer
                         button.btn.btn-default(type='button' data-dismiss='modal') Close
 
